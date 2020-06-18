@@ -2,3 +2,11 @@
   link: /
 - name: About
   link: /about.html
+- name: Blog
+  link: /blog.html
+- name: Projects
+  link: /projects.html
+- name: Papers
+  link: /papers.html
+- name: Tutorials
+  link: /tutorials.html
