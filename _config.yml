@@ -28,7 +28,7 @@ twitter_username: jekyllrb
 github_username:  MrPop2213
 
 # Build settings
-theme: jekyll-theme-midnight
+theme: jekyll-theme-minimal
 plugins:
   - jekyll-feed
 
