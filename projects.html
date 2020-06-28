@@ -2,13 +2,15 @@
 title: Projects
 ---
 <h1>Projects</h1>
-
-<ul>
+<hr style="width:500px; color: {{ site.bright_colour }}">
+<ul class="linklist">
   {% for project in site.projects %}
-    <li>
-      <h2><a href="{{ project.url }}">{{ project.title }}</a></h2>
-      <h3>{{ project.subtitle }}</h3>
-      <p>{{ project.content | markdownify }}</p>
-    </li>
+  <li>
+      <a href="{{ project.url }}" class=link>
+          <h2>{{ project.title }}</h2>
+          <h3>{{ project.subtitle }}</h3>
+          <p>{{ project.content | markdownify }}</p>
+      </a>
+  </li>
   {% endfor %}
 </ul>

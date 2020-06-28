@@ -2,12 +2,14 @@
 title: Blog
 ---
 <h1>Latest Posts</h1>
-
-<ul>
+<hr style="width:500px; color: {{ site.bright_colour }}">
+<ul class="linklist">
   {% for post in site.posts %}
     <li>
-      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-      {{ post.excerpt }}
+        <a href="{{ post.url }}" class=link>
+            <h2>{{ post.title }}</h2>
+            {{ post.description }}
+        </a>
     </li>
   {% endfor %}
 </ul>

@@ -1,12 +1,8 @@
-- name: Home
-  link: /
-- name: About
-  link: /about.html
 - name: Blog
-  link: /blog.html
+  link: /blog/
 - name: Projects
-  link: /projects.html
+  link: /projects/
 - name: Papers
-  link: /papers.html
+  link: /papers/
 - name: Tutorials
-  link: /tutorials.html
+  link: /tutorials/
