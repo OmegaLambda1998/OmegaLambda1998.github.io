@@ -1,3 +1,122 @@
 ---
 ---
-@import "main";
+nav ul li a.active { /* The active link */
+}
+
+nav ul li a:hover { /* The highlighted link */
+    background-image: linear-gradient(180deg, {{ site.bright_colour }}, {{ site.mid_colour }}, {{ site.dark_colour }}, black, black, black) 
+}
+
+nav { /* General navigation bar */
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul { /* Navigation bar list */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    list-style-type: none; /* The list marker */
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    /*background-color: {{ site.dark_colour }};*/
+    text-align: center;
+    display: flex;
+    justify-content: right;
+    font-weight: bold;
+    background-image: linear-gradient(180deg, black, black, black, {{ site.dark_colour }}, {{ site.mid_colour }}, {{ site.bright_colour }})
+}
+
+nav ul li { /* Navigation bar item */
+    display: inline-block;
+    border-right: 1px solid {{ site.white_colour }}; /* Place a border on the right of the link */
+}
+
+nav ul li:first-child {
+    border-left: 1px solid {{ site.white_colour }};
+}
+
+nav ul li:last-child {
+    border-right: none;
+}
+
+nav ul li a { /* Navigation bar hyperlink */
+    display: inline-block;
+    color: {{ site.white_colour }};
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+a.home {
+    float: left;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    padding: 16px;
+    color: {{ site.white_colour }};
+    border-right: 1px solid {{ site.white_colour }};
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a.home.active { /* The active link */
+}
+
+a.home:hover { /* The highlighted link */
+    background-image: linear-gradient(180deg, {{ site.bright_colour }}, {{ site.mid_colour }}, {{ site.dark_colour }}, black, black, black) 
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0 auto;
+    background-color: {{ site.white_colour }};
+    font-family: "arial"
+}
+
+div.content {
+    padding: 10px;
+    padding-top: 50px;
+    text-align: center;
+    vertical-align: middle;
+    color: {{ site.black_colour }};
+}
+
+div.titlepage {
+    color: {{ site.dark_colour }};
+    padding-top: 10px;
+}
+
+div.postcontent {
+    padding-top: 10px;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 50px;
+    color: {{ site.dark_colour }};
+}
+
+div.post {
+    margin-top: 50px;
+    box-shadow: 0 1px 10px {{ site.dark_colour }}, 0 1px 10px {{ site.dark_colour }};
+}
+
+a.link {
+    display: inline-block;
+    text-decoration: none;
+    color: {{ site.dark_colour }};
+    border: 1px solid {{ site.bright_colour }};
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 90%;
+}
+
+ul.linklist {
+    list-style-type: none;
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+}
