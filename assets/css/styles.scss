@@ -8,8 +8,16 @@ nav ul li a:hover { /* The highlighted link */
 }
 
 nav { /* General navigation bar */
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
     display: flex;
-    justify-content: space-between;
+
+    -webkit-justify-content: space-between; 
+    justify-content: space-between; 
 }
 
 nav ul { /* Navigation bar list */
