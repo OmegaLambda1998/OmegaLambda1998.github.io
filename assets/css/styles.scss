@@ -34,7 +34,7 @@ nav ul { /* Navigation bar list */
     display: -moz-flex;
     display: -webkit-flex;
     display: flex;
-    justify-content: right;
+    justify-content: flex-end;
     font-weight: bold;
     background-image: linear-gradient(180deg, black, black, black, {{ site.dark_colour }}, {{ site.mid_colour }}, {{ site.bright_colour }})
 }
@@ -61,8 +61,8 @@ nav ul li a { /* Navigation bar hyperlink */
 }
 
 a.home {
-    float: left;
     position: fixed;
+    float: left;
     top: 0;
     z-index: 9999;
     padding: 16px;
