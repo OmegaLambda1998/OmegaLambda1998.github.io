@@ -35,6 +35,7 @@ nav ul { /* Navigation bar list */
     display: -webkit-flex;
     display: flex;
     justify-content: flex-end;
+    -webkit-justify-content: flex-end;
     font-weight: bold;
     background-image: linear-gradient(180deg, black, black, black, {{ site.dark_colour }}, {{ site.mid_colour }}, {{ site.bright_colour }})
 }
