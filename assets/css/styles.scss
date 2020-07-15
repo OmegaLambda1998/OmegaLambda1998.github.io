@@ -30,6 +30,9 @@ nav ul { /* Navigation bar list */
     overflow: hidden;
     /*background-color: {{ site.dark_colour }};*/
     text-align: center;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
     display: flex;
     justify-content: right;
     font-weight: bold;
