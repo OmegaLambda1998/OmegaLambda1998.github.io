@@ -20,6 +20,19 @@ nav { /* General navigation bar */
     justify-content: space-between; 
 }
 
+footer { /* General navigation bar */
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-justify-content: space-between; 
+    justify-content: space-between; 
+}
+
 nav ul { /* Navigation bar list */
     position: fixed;
     top: 0;
@@ -43,7 +56,8 @@ nav ul { /* Navigation bar list */
 footer ul {
     position: fixed;
     bottom: 0;
-    list-style-type: none
+    width: 100%;
+    list-style-type: none;
     margin: 0 auto;
     padding: 0;
     overflow: hidden;
@@ -52,8 +66,8 @@ footer ul {
     display: -moz-flex;
     display: -webkit-flex;
     display: flex;
-    justify-content: flex-start;
-    -webkit-justify-conent: flex-start;
+    justify-content: flex-end;
+    -webkit-justify-conent: flex-end;
     background-image: linear-gradient(180deg, black, black, black, {{ site.dark_colour }}, {{ site.mid_colour }}, {{ site.bright_colour }})
 }
 
@@ -62,11 +76,24 @@ nav ul li { /* Navigation bar item */
     border-right: 1px solid {{ site.white_colour }}; /* Place a border on the right of the link */
 }
 
+footer ul li {
+    display: inline-block;
+    border-right: 1px solid {{ site.white_colour }};
+}
+
 nav ul li:first-child {
     border-left: 1px solid {{ site.white_colour }};
 }
 
+footer ul li:first-child {
+    border-left: 1px solid {{ site.white_colour }}
+}
+
 nav ul li:last-child {
+    border-right: none;
+}
+
+footer ul li:last-child {
     border-right: none;
 }
 
@@ -76,6 +103,18 @@ nav ul li a { /* Navigation bar hyperlink */
     text-align: center;
     padding: 16px;
     text-decoration: none;
+}
+
+footer ul li a {
+    display: inline-block;
+    color: {{ site.white_colour }};
+    text-align: center;
+    text-decoration: none;
+    padding: 12px;
+}
+
+footer ul li a:hover {
+    background-image: linear-gradient(180deg, {{ site.bright_colour }}, {{ site.mid_colour }}, {{ site.dark_colour }}, black, black, black) 
 }
 
 a.home {
