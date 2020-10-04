@@ -40,6 +40,23 @@ nav ul { /* Navigation bar list */
     background-image: linear-gradient(180deg, black, black, black, {{ site.dark_colour }}, {{ site.mid_colour }}, {{ site.bright_colour }})
 }
 
+footer ul {
+    position: fixed;
+    bottom: 0;
+    list-style-type: none
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+    display: ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: flex-start;
+    -webkit-justify-conent: flex-start;
+    background-image: linear-gradient(180deg, black, black, black, {{ site.dark_colour }}, {{ site.mid_colour }}, {{ site.bright_colour }})
+}
+
 nav ul li { /* Navigation bar item */
     display: inline-block;
     border-right: 1px solid {{ site.white_colour }}; /* Place a border on the right of the link */
