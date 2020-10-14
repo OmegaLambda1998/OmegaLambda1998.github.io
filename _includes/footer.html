@@ -1,8 +1,7 @@
 <footer class="footer">
     <ul>
-        <li><a href="mailto: patrick.armstrong@anu.edu.au"><i class="fa fa-envelope"></i></a></li>
-        <li><a href="https://github.com/OmegaLambda1998"><i class="fa fa-github"></i></a></li>
-        <li><a href="https://www.linkedin.com/in/patrick-armstrong-5576061b8/"><i class="fa fa-linkedin"></i></a></li>
-        <li><a href="https://twitter.com/OmegaLambda_"><i class="fa fa-twitter"></i></a></li>
+        {% for item in site.data.footer %}
+            <li><a href="{{item.link}}" aria-label="{{item.desc}}"><i class="{{item.icon}}" aria-hidden="true" title="{{item.desc}}"></i></a></li>
+        {% endfor %}
     </ul>
 </footer>
