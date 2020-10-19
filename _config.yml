@@ -36,8 +36,15 @@ defaults:
       values:
         layout: "default"
 
+
 black_colour:  '#1F1300'
+grey_colour:   '#808080'
 white_colour:  '#FFFFFF'
 dark_colour:   '#1D2951'
 mid_colour:    '#0E4D92'
 bright_colour: '#73C2FB'
+
+markdown: kramdown
+highlighter: rogue
+kramdown:
+    syntax_highlighter: rouge

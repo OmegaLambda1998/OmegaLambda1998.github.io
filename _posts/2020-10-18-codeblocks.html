@@ -1,0 +1,86 @@
+---
+author: Patrick Armstrong
+title: Using Javascript to automate codeblocks
+description: How I use javascript to avoid writing many, many code blocks
+---
+<p>
+I plan to have a lot of code in these blogs, so I need to figure out how to display that code in a nicely formatted way.
+</p>
+<h2>Raw HTML</h2>
+<p>
+Let's say I want to display a small, inline block of code. In order to do that I can use the <code class="inline">&lt;code&gt;&lt;/code&gt;</code> block. If instead I want a block of code, I can use some css and classes to get:
+</p>
+<code class="codeblock">
+&lt;code class="codeblock" style="display:block;"&gt;&lt;/code&gt;
+</code>
+<p>
+Now, we start to see some issues when I have multiple lines of code. For instance, the following snippet shows a julia for loop.
+</p>
+<code class="codeblock">
+for i in 1:10
+    println(i^2)
+end
+</code>
+<p>
+However, the formatting of this snippet is all wrong! This is because HTML ignores tabs and character returns when formating text inside of a code block. To solve this, we can wrap our code blocks with <code class="inline">&lt;pre&gt;&lt;/pre&gt;</code>. This tells html that the text inside is preformatted, so our webpage will display it as written. With <code class="inline">pre</code> our julia code now looks like:
+</p>
+<pre>
+<code class="codeblock">for i in 1:10
+    println(i^2)
+end
+</code>
+</pre>
+</p>
+<h2>Jekyll, Liquid, and Rouge</h2>
+<p>
+So we now have a few different ways of displaying code, but they all have something in common - they're extremely ugly. In order to make these more readable we want to include some syntax highlighting. Luckily, since we are using Jekyll to create our webpage we have access to a syntax highlighter out of the box - Rouge.
+</p>
+<p>
+Simply by wrapping our code in the following:
+<pre>
+<code class="codeblock">&#123;% highlight lang %&#125;
+[code]
+&#123;% endhighlight %&#125;
+</code>
+</pre>
+where <code class="inline">lang</code> is the language. This will produce new html code with different parts of <code class="inline">[code]</code> in spans which can be easily manipulated via css. For instance, our piece of jekyll code looks like this:
+</p>
+{% highlight julia linenos %}
+# Here is some julia code
+for i in 1:10
+    println(i^2)
+end
+{% endhighlight %}
+<p>
+Now this is obviously much better than what we had before, and it was remarkably simple to produce! If you inspect the html of that codeblock you'll find that each distinct element (for, i, in, 1, :, 10, etc...) is wrapper in a span with a particular class. We can then use CSS to change the colour of each of those elements individually, leading us to syntax highlighting. Rouge make use of the same span classes as the popular python package pygment. As such, pygment themes can be used to theme Rouge syntax highlighting as well! I use an edited version of <a href="http://jwarby.github.io/jekyll-pygments-themes/languages/javascript.html">Monokai</a>.
+</p>
+<h2>Line Numbers &amp; Language Display</h2>
+<p>
+Adding line numbers is quite easy, simply include <code class="inline">linenos</code> in the initial highlight call. This has a slight issue in that you are able to copy the line number, however that is easily fixed with the following CSS:
+</p>
+{% highlight css linenos %}
+.highlight .lineno {
+    /* ... */
+    user-select: none; 
+}
+{% endhighlight %}
+<p>
+Displaying the language is a little bit more difficult, I took some code from <a href="https://www.bytedude.com/jekyll-syntax-highlighting-and-line-numbers/">this blog</a> to produce the following scss code:
+</p>
+{% highlight scss linenos %}
+figure.highlight {
+    position: relative;
+    pre {
+        code {
+            &[data-lang]::before {
+                content: attr(data-lang);
+                background-color: {{ site.dark_colour }};
+                padding: 3px;
+                display: flex;
+                justify-content: flex-end;
+            }
+        }
+    }
+}
+{% endhighlight %}
+This works because Rouge wraps the <code class="inline">&lt;pre&gt;&lt;code&gt;</code> blocks with a <code class="inline">figure</code> block.
