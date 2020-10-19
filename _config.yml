@@ -45,6 +45,6 @@ mid_colour:    '#0E4D92'
 bright_colour: '#73C2FB'
 
 markdown: kramdown
-highlighter: rogue
+highlighter: rouge
 kramdown:
     syntax_highlighter: rouge
