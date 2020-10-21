@@ -204,7 +204,7 @@ code.inline {
     display: inline;
 }
 
-h2 {
+h2.sub {
     border-bottom:1px solid {{ site.bright_colour }};
     padding-bottom:3px;
 }
