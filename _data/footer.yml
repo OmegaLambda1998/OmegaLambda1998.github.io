@@ -10,6 +10,6 @@
 - link: "https://twitter.com/OmegaLambda_"
   icon: "fa fa-twitter"
   desc: "Link to my twitter"
-- link: "assets/files/Simple_CV.pdf"
+- link: "/assets/files/Simple_CV.pdf"
   icon: "fa fa-file-pdf-o"
   desc: "Link to my CV"

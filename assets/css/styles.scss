@@ -198,15 +198,32 @@ ul.linklist {
 
 code.codeblock {
     display: block;
+    background-color: #272822;
+    color: {{ site.bright_colour }};
+    padding: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 10px;
 }
 
 code.inline {
     display: inline;
+    background-color: #272822;
+    color: {{ site.bright_colour }};
+    padding: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 10px;
+    white-space: nowrap;
 }
 
 h2.sub {
     border-bottom:1px solid {{ site.bright_colour }};
     padding-bottom:3px;
+}
+
+p {
+    line-height: 1.8;
 }
 
 figure.highlight {
