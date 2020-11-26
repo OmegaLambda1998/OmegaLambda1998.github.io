@@ -48,3 +48,6 @@ markdown: kramdown
 highlighter: rouge
 kramdown:
     syntax_highlighter: rouge
+
+include:
+    - _includes

@@ -226,21 +226,39 @@ p {
     line-height: 1.8;
 }
 
-figure.highlight {
-    position: relative;
-    pre {
-        code {
-            &[data-lang]::before {
-                content: attr(data-lang);
-                background-color: {{ site.dark_colour }};
-                padding: 3px;
-                display: flex;
-                justify-content: flex-end;
-            }
-        }
-    }
+div.codeparent {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
 }
 
+figure.highlight {
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow: auto;
+}
+
+a.codeblock {
+    color: {{ site.bright_colour }};
+}
+
+span.internal_highlight {
+    border-bottom: solid 1px {{ site.white_colour }};
+}
+
+td.code pre {
+    //background-color: black;
+    width: 100%;
+    max-width: 100%;
+}
+
+div.highlight {
+    background-color: {{ site.dark_colour }};
+    padding: 3px;
+    display: flex;
+    justify-content: flex-end;
+}
 
 .highlight {z-index: -1;}
 .highlight pre { background-color: #272822; border-radius: 10px; color: {{ site.bright_colour }}; z-index:-1;}
