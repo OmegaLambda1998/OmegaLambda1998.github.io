@@ -4,6 +4,9 @@ title: Making pretty codeblocks
 description: How to get fancy codeblocks
 ---
 <p>
+<b> Note: much of this has now changed. Check out this <a href={% post_url 2020-10-24-liquid %}>post</a> to see how I now display the language, and much more!</b>
+</p>
+<p>
 I plan to have a lot of code in these blogs, so I need to figure out how to display that code in a nicely formatted way.
 </p>
 <h2 class="sub">Raw HTML</h2>
@@ -43,7 +46,7 @@ Simply by wrapping our code in the following:
 &#123;% endhighlight %&#125;
 </code>
 </pre>
-where <code class="inline">lang</code> is the language. This will produce new HTML code with different parts of <code class="inline">[code]</code> in <code class="inline">spans</code> which can be easily manipulated via CSS. For instance, our piece of jekyll code looks like this:
+where <code class="inline">lang</code> is the language. This will produce new HTML code with different parts of <code class="inline">[code]</code> in <code class="inline">spans</code> which can be easily manipulated via CSS. For instance, our piece of Julia code looks like this:
 </p>
 {% highlight julia linenos %}
 # Here is some julia code
@@ -91,7 +94,7 @@ The only issue thusfar is I've been writing out each of these code blocks by han
 Luckily Jekyll has us covered there too with the <code class="inline">&#123;% include filename %&#125;</code> and <code class="inline">&#123;% include_relative somedir/filename%&#125;</code> liquid commands. The former searches for <code class="inline">filename</code> within the <code class="inline">_includes</code> folder. The latter searches relative to the current file. This works quite well, allowing me to easily include code from local files. The following codeblock comes from <code class="inline">_includes</code>:
 </p>
 {% highlight julia linenos %}
-{% include test.jl %}
+{% include /codeblocks/test.jl %}
 {% endhighlight %}
 <p>
 And this next one is placed directly in the <code class="inline">_posts</code> directory:
@@ -108,7 +111,7 @@ The reason for this is thanks to how Jekyll and Liquid work to convert the <code
 {% highlight liquid linenos %}
 {% raw %}
 {% highlight julia linenos %}
-{% include test.jl %}
+{% include /codeblocks/test.jl %}
 {% endhighlight %}
 {% endraw %}
 {% endhighlight %}
@@ -116,7 +119,7 @@ The reason for this is thanks to how Jekyll and Liquid work to convert the <code
 However, if you were to inspect that codeblock, you'd find a mess of <code class="inline">figure</code>, <code class="inline">pre</code>, <code class="inline">code</code>, and so on. Jekyll takes the Liquid code I've written and then produces a new file which is what you are reading right now, placing it in a new directory called <code class="inline">_site</code>. The issue with this is that the code I am including is not brought over to this new directory as any directory starting with an _ is ignored.
 </p>
 <p>
-The other (notabely minor) issue with using the <code class="inline">include</code> commands is the results of code. In order to show you the output of a codeblock I still need to write that out by hand
+The other (notably minor) issue with using the <code class="inline">include</code> commands is the results of code. In order to show you the output of a codeblock I still need to write that out by hand.
 </p>
 <p>
 I don't yet have a solution to either of these problems. My current train of thought is to start making use of javascript. If I can write my own code to include a file inside the <code class="inline">highlight</code> block, then I can store that file wherever I want. Additionally, javascript may be able to run code and collect the output to automatically be included in the codeblock. Once I come up with a solution, I'll create another post detailing it!

@@ -1,0 +1,29 @@
+{% capture content %}{% include {{include.file}} %}{% endcapture %}
+
+{% assign result = "" | split: "," %}
+
+{% assign list = content | newline_to_br | split: "<br />" %}
+
+{% if include.start %}
+{% assign start = include.start | to_integer %}
+{% else %}
+{% assign start = 1 %}
+{% endif %}
+
+
+{% if include.end %}
+{% assign end = include.end | to_integer %}
+{% else %}
+{% assign end = list.size %}
+{% endif %}
+
+
+{% for item in list %}
+    {% if forloop.index >= start %}
+        {% if forloop.index <= end %}
+            {% assign result = result | push: item %}
+        {% endif %}
+    {% endif %}
+{% endfor %}
+
+{{ result | join: "" }}
