@@ -1,0 +1,16 @@
+---
+title: Misc.
+---
+<h1>Miscellaneous</h1>
+<hr style="width:500px; color: {{ site.bright_colour }}">
+<div class=cardparent>
+    {% for post in site.misc %}
+    <div class=card>
+        <a href="{{ post.url }}" class=link>
+            <div class=cardimg><img src={{ post.img }} alt="{{ post.title }}" width=100% class=cardimg></div>
+            <div class=cardtitle><h2>{{ post.title }}</h2></div>
+            <div class=carddescription><h3>{{ post.description }}</h3></div>
+        </a>
+    </div>
+    {% endfor %}
+</div>
