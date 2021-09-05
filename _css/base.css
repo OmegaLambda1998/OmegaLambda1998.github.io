@@ -4,20 +4,40 @@
 
 :root {
   --block-background: hsl(0, 0%, 94%);
+  --background: #e5e0d6;
+  --logo-colour: #02364a;
   --output-background: hsl(0, 0%, 98%);
-  --small: 14px;
-  --normal: 19px;
-  --text-color: hsv(0, 0%, 20%);
+  --small: 0.75em;
+  --normal: 1em;
+  --text-colour: #182844;
+  --banner-colour: #071738;
 }
 
 /* ==================================================================
     DEFAULT FONT AND LAYOUT
 ================================================================== */
+* {
+    box-sizing: border-box;    
+}
 
 html {
   font-family: Helvetica, Arial, sans-serif;
   font-size: var(--normal);
-  color: var(--text-color);
+  color: var(--text-colour);
+}
+
+body {
+    background-color: var(--background);
+    margin: 0;
+    width: auto;
+}
+
+/* ==================================================================
+    HEADER AND FOOTER 
+================================================================== */
+
+header {
+    background-color: var(--banner-colour);
 }
 
 /* ==================================================================
@@ -30,7 +50,8 @@ html {
 
 .franklin-content .left {
   float: left;
-  margin-right: 15px;
+  margin-right: 5%;
+  max-width: 100%;
 }
 
 .franklin-content .right {
@@ -39,6 +60,7 @@ html {
 
 .franklin-content .container img {
   width: auto;
+  max-width: 100%;
   padding-left: 0;
   border-radius: 10px;
 }
@@ -81,25 +103,24 @@ html {
 
 .franklin-content {
   position: relative;
-  padding-left: 12.5%;
-  padding-right: 12.5%;
   line-height: 1.35em;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
 }
 
 /* On wide screens, fix content width to a max value. */
-@media (min-width: 940px) {
+@media (max-width: 940px) {
   .franklin-content {
-    width: 705px;
-    margin-left: auto;
-    margin-right: auto;
+      width: 70%;
   }
 }
 
 /* On narrow device, reduce margins. */
 @media (max-width: 480px) {
   .franklin-content {
-    padding-left: 6%;
-    padding-right: 6%;
+      width: 90%;
   }
 }
 
@@ -107,9 +128,9 @@ html {
     TITLES
 ================================================================== */
 
-.franklin-content h1 { font-size: 24px; }
-.franklin-content h2 { font-size: 22px; }
-.franklin-content h3 { font-size: 20px; }
+.franklin-content h1 { font-size: 1.5em; }
+.franklin-content h2 { font-size: 1.37; }
+.franklin-content h3 { font-size: 1.25; }
 
 .franklin-content h1,
 h2,
