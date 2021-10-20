@@ -33,11 +33,93 @@ body {
 }
 
 /* ==================================================================
+    CARDS 
+================================================================== */
+div.cardparent {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div.card {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    background-color: var(--banner-colour);
+    border-radius: 10px;
+    margin: 1.5%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+    justify-content: flex-end;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+div.card:hover {
+    transform: translateY(-5%);
+}
+
+div.card a {
+    color: var(--text-colour);
+}
+
+div.card a:hover {
+    text-decoration: none;
+}
+
+div.cardtitle {
+    font-weight: bold;
+}
+
+div.cardimg {
+    overflow: hidden;
+}
+
+div.cardimg img {
+    padding: 0%;
+    width: 100%;
+}
+
+div.cardcontainer {
+    padding: 5%;
+    background-color: var(--background);
+}
+
+
+/* ==================================================================
+    LOGO AND HEADSHOT 
+================================================================== */
+#headshot {
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+#headshot img.headshot_logo {
+    min-width: 50%;
+    max-width: 50%;
+    height: auto;
+    padding: 0;
+    margin-left: 25%;
+}
+
+#headshot img.headshot {
+    position: absolute;
+    width: 18%;
+    height: auto;
+    border-radius: 50%;
+    padding: 0;
+    top: 5%;
+    left: 55.4%;
+}
+
+/* ==================================================================
     HEADER AND FOOTER 
 ================================================================== */
 
 header {
     background-color: var(--banner-colour);
+    background: linear-gradient(180deg, var(--banner-colour) 0%, var(--banner-colour) 50%, var(--logo-colour) 100%);
 }
 
 /* ==================================================================
@@ -108,6 +190,7 @@ header {
   margin-left: auto;
   margin-right: auto;
   padding: 0;
+  padding-top: 2%;
 }
 
 /* On wide screens, fix content width to a max value. */

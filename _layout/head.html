@@ -8,9 +8,10 @@
   <link rel="stylesheet" href="/css/base.css">
   <link rel="stylesheet" href="/css/header_and_nav.css">
   <link rel="icon" href="/assets/favicon.png">
-  {{isdef title}} <title>{{fill title}}</title>  {{end}}
+  {{isdef title}} <title>Omega Lambda | {{fill tabname}}</title>  {{end}}
 </head>
 <body>
   {{insert header.html}}
-
+  {{ispage projects/*}}{{isnotpage projects/index.md}}{{insert head_project.html}}{{end}}{{end}}
+  {{ispage articles/*}}{{isnotpage articles/index.md}}{{insert head_article.html}}{{end}}{{end}}
 <!-- Content appended here -->

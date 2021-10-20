@@ -3,7 +3,7 @@
    viewBox="0 0 899.92357 501.07422"
    version="1.1"
    id="svg67"
-   sodipodi:docname="Logo_Only_Colour.svg"
+   sodipodi:docname="Logo_Only_Colour_invert.svg"
    width="899.92352"
    height="501.07422"
    inkscape:version="1.1 (c4e8f9ed74, 2021-05-24)"
@@ -26,14 +26,14 @@
      inkscape:pagecheckerboard="0"
      showgrid="false"
      inkscape:zoom="0.72100073"
-     inkscape:cx="475.03419"
+     inkscape:cx="201.80285"
      inkscape:cy="363.38382"
      inkscape:window-width="1920"
      inkscape:window-height="1053"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg67" />
+     inkscape:current-layer="Layer_1" />
   <g
      id="Layer_1"
      data-name="Layer 1"
@@ -44,14 +44,16 @@
        fill="#e5e0d6"
        font-family="Arial-Black, 'Arial Black'"
        font-weight="800"
-       id="text57">λ</text>
+       id="text57"
+       style="fill:#071738;fill-opacity:1">λ</text>
     <text
        transform="matrix(1.03,0,0,1,0,600.21)"
        font-size="682.19px"
        fill="#e5e0d6"
        font-family="Arial-Black, 'Arial Black'"
        font-weight="800"
-       id="text59">Ω</text>
+       id="text59"
+       style="fill:#071738;fill-opacity:1">Ω</text>
     <text
        x="-471"
        y="-171.60001"

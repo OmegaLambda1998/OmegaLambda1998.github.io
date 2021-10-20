@@ -61,6 +61,7 @@ header .header-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    align-content: center;
     width: 50%;
     margin: auto;
 }
@@ -124,7 +125,6 @@ medium display: nav goes under name
     header .home {
         display: block;
         width: 100%;
-        padding-bottom: 10px;
     }
 
     nav {
@@ -152,6 +152,7 @@ instead, display a burger menu.
     }
 
     nav {
+        position: relative;
         display: inline-block;
         width: 27%;
     }
@@ -164,9 +165,9 @@ instead, display a burger menu.
         /* padding: 20px; */
         background: var(--banner-colour);
         border: 1px solid #444;
-        left: 10%;
-        top: 10%;
-        width: 30%;
+        left: 0;
+        top: 5px;
+        min-width: 100%;
         border-radius: 4px 0 4px 4px;
         z-index: 1;
     }
@@ -176,6 +177,7 @@ instead, display a burger menu.
         display: block;
         padding: 0;
         margin: 0;
+        width: 100%;
     }
     header li a { border-bottom: none; }
     header li a:hover { border-bottom: none; }
