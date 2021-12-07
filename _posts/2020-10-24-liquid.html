@@ -1,0 +1,166 @@
+---
+author: Patrick Armstrong
+title: Using Liquid & Javascript to automate codeblocks
+description: Automatic codeblocks for the <del>lazy</del> <ins>efficient</ins>!
+---
+<p>
+In my last <a href="{% post_url 2020-10-18-codeblocks %}">post</a> I showed how to use the Liquid <code class="inline">include</code> commands to automatically load text from a file into codeblocks. In this post I'm going to show you how I used liquid and javascript to extend this and add a bunch of functionality!
+</p>
+<p>
+Before I go into it, you may be wondering why I'm going to so much trouble when well defined solutions already exist, such as <a href="https://highlightjs.org/">highlight.js</a>, and <a href="https://prismjs.com/">prism.js</a>? There's a few reasons. The most important one is that github-pages run in <code class="inline">safe mode</code>. This means there are a select few plugins I can use with Jekyll, and changing certain configs needed to enable these solutions is not possible. The second is, I've never writtin up a website from scratch (or almost scratch) before, so I wanted to challenge myself to see how much I could do.
+</p>
+<h2 class="sub">Include a subset of a file</h2>
+<p>
+The first thing I did was include functionality which allowed me to only include a subset of the file in the codeblock. I decided to do this purely with Liquid rather than with Javascript so that people who have disabled javascript on their browser will see the same as those that have. I only use javascript for aesthetic things which improve the website but aren't necessary to view it.
+</p>
+<p>
+In order to use Liquid I followed <a href="http://hamishwillee.github.io/2014/11/13/jekyll-includes-are-functions/">this</a> wonderful blog which describes how to use the <code class="inline">include</code> commands as pseudo-function. When you include a file, you can pass parameters to the file via:
+</p>
+<div class="codeparent">
+{% highlight liquid linenos %}
+{% raw %}
+{% include filename parameter1=value1 parameter2=value2 %}
+{% endraw %}
+{% endhighlight %}
+</div>
+<p>
+Then, Liquid code within <code class="inline">filename</code> has access to these parameters and can use them as inputs to functions. The output is just whatever raw, non Liquid, text is in that file. The psuedo-function I use to include subsets of files is as follows:
+</p>
+<div class="codeparent" data-download="/_includes/functions/codeblock.html">
+    {%highlight liquid linenos %}{% include /functions/codeblock.html file="/functions/codeblock_display.html" %}{% endhighlight %}
+</div>
+<p>
+And is called via:
+</p>
+<div class="codeparent">
+    {% highlight liquid linenos %}{% raw %}{% include /path/to/codeblock.html file="/path/to/file" start=num1 end=num2 %}{% endraw %}{% endhighlight %}
+</div>
+<p>
+Where file is the file you actually want to include, start is the line you want to start on and end the line you want to finish on.
+</p>
+<p>
+Going through this step by step we have:
+</p>
+<div class="codeparent">
+    {%highlight liquid linenos %}{% include /functions/codeblock.html file="/functions/codeblock_display.html" end = 1 %}{% endhighlight %}
+</div>
+<p>
+This line takes the text within <code class="inline">file</code> and stores it in the variable <code class="inline">content</code>.
+</p>
+<div class="codeparent" data-offset=3>
+    {%highlight liquid linenos %}{% include /functions/codeblock.html file="/functions/codeblock_display.html" start = 3 end = 3 %}{% endhighlight %}
+</div>
+<p>
+Here we create a new array called <code class="inline">result</code>. We will be using this array to store the lines we want to include in the codeblock.
+</p>
+<div class="codeparent" data-offset=5>
+    {%highlight liquid linenos %}{% include /functions/codeblock.html file="/functions/codeblock_display.html" start = 5 end = 5 %}{% endhighlight %}
+</div>
+<p>
+Now we split the <code class="inline">content</code> up by its newlines and stores this in an array called <code class="inline">list</code>
+</p>
+<div class="codeparent" data-offset=7>
+    {%highlight liquid linenos %}{% include /functions/codeblock.html file="/functions/codeblock_display.html" start = 7 end = 11 %}{% endhighlight %}
+</div>
+<p>
+This chunk of code checks whether we are defining a <code class="inline">start</code> and creates a corresponding variable. If we don't define a starting line it defaults to 1.
+</p>
+<div class="codeparent" data-offset=13>
+    {%highlight liquid linenos %}{% include /functions/codeblock.html file="/functions/codeblock_display.html" start = 13 end = 17 %}{% endhighlight %}
+</div>
+<p>
+Same as the last block, except for the ending line. The default this time is the number of lines we have.
+</p>
+<div class="codeparent" data-offset=19 data-highlight=3>
+    {%highlight liquid linenos %}{% include /functions/codeblock.html file="/functions/codeblock_display.html" start = 19 end = 25 %}{% endhighlight %}
+</div>
+<p>
+This <code class="inline">for loop</code> goes through each line and checks whether the <code class="inline">index</code> of that line in the <code class="inline">list</code> is between our <code class="inline">start</code> and <code class="inline">end</code> lines. We then add that line to our <code class="inline">result</code> array (line 22).
+</p>
+<div class="codeparent" data-offset=27>
+    {%highlight liquid linenos %}{% include /functions/codeblock.html file="/functions/codeblock_display.html" start = 27%}{% endhighlight %}
+</div>
+<p>
+Finally we <code class="inline">join</code> our <code class="inline">result</code> array to produce the final block of code to display.
+</p>
+<p>
+The perks of doing this with Liquid instead of Javascript is Liquid runs during websit compilation, meaning the lines get inserted and then syntax highlighting is applied. Any changes we make using Javascript do not have the benefit of syntax highlighting so take quite a bit more work.
+</p>
+<h2 class="sub">Additional functionality with Javascript</h2>
+<p>
+There are a number of things which would be difficult, bordering on impossible, to implement with this jekyll function implementation. In these cases we can move over to Javascript which is a much more powerful language (in that it actually is a language). In order to make use of this code, I wrap my <code class="inline">highlight</code> block with <code class="inline">&lt;div class="codeparent"&gt;</code>, adding in any data attributes we want to include. The following codeblock shows the full javascript file I used to add this new functionality:
+</p>
+<div class="codeparent" data-download="/assets/js/codeblock.js">
+    {% highlight javascript linenos %}{% include /functions/codeblock.html file="/assets/js/codeblock.js" %}{% endhighlight %}
+</div>
+<h3>Display Language</h3>
+The block of code which deals with displaying the language is as follows:
+<div class="codeparent" data-offset=9>
+    {% highlight javascript linenos %}{% include /functions/codeblock.html file="/assets/js/codeblock.js" start=9 end=18 %}{% endhighlight %}
+</div>
+<p>
+This reads the language from the <code class="inline">data-lang</code> attribute of the <code class="inline">code</code> block. I create a new <code class="inline">div</code> and populate it with the desired text (after ensuring the language is formatted nicely).
+</p>
+<h3>Offset line number</h3>
+<p>
+Being able to specify a subset of the data is very useful, however it does come with a slight problem. My current method performs the slicing before the code which generates the html for the codeblocks is run. This means <code class="inline">Rouge</code> reads this subset of code as a single, complete block of code, rather than as a subset of a larger file. This means that despite the code being halfway through a file, the line number will start at 1. Instead I'd like to add an offset to the line number to reflect the true position of the subset within the full codeblock.
+</p>
+<p>
+Specifying the offset I want is as easy as adding <code class="inline">data-offset=n</code> to the <code class="inline">codeparent</code> <code class="inline">div</code>, where <code class="inline">n</code> is the offset you want to add. The code to add that offset is as follows:
+</p>
+<div class="codeparent" data-offset=20>
+    {% highlight javascript linenos %}{% include /functions/codeblock.html file="/assets/js/codeblock.js" start=20 end=27 %}{% endhighlight %}
+</div>
+<p>
+This extracts the line numbers from the <code class="inline">lineno</code> block, uses <code class="inline">parseInt</code> to shift them by the given offset, and finally plugs them back in the same spot in the <code class="inline">lineno</code> block.
+</p>
+<h3>Highlight line</h3>
+<p>
+Sometimes I may want to easily talk about a single line within a block of code. Rather than isolating that line in its own seperate codeblock, I'd prefer to give it some kind of highlight. I can specify what line to highlight by adding <code class="inline">data-highlight=n</code>, where <code class="inline">n</code> is the line to be highlighted. The code accomplishing this is:
+</p>
+<div class="codeparent" data-offset=31>
+    {% highlight javascript linenos %}{% include /functions/codeblock.html file="/assets/js/codeblock.js" start=31 end=42 %}{% endhighlight %}
+</div>
+<p>
+This very simply isolates the line and line number we wish to highlight, and wraps them in a <code class="inline">span</code> with the <code class="inline">internal_highlight</code> </code class="inline">class</code> so that we can control exactly how we want our highlighting to look. 
+</p>
+<h3>Download button</h3>
+<p>
+Adding a download button was possibly the simplest to implement. I include the download by adding <code class="inline">data-download="path/to/file"</code> to my <code class="inline">codeparent</code> block. The code is the following few lines:
+</p>
+<div class="codeparent" data-offset=44>
+    {% highlight javascript linenos %}{% include /functions/codeblock.html file="/assets/js/codeblock.js" start=44 end=48 %}{% endhighlight %}
+</div>
+<p>
+Which simply prepends an <code class="inline">a</code> block to the same <code class="inline">div</code> which handles displaying the language.
+</p>
+<h3>Bold a phrase</h3>
+<p>
+The last bit of functionality I added was the ability to bold a given phrase in order to draw attention to it. Specifying the phrase in question is as simple as adding <code class="inline">data-bold="phrase"</code>, which is then passed through the following code to highlight the given phrase:
+</p>
+<div class="codeparent" data-offset=50>
+    {% highlight javascript linenos %}{% include /functions/codeblock.html file="/assets/js/codeblock.js" start=50 end=63 %}{% endhighlight %}
+</div>
+<p>
+This works because each keyword is wrapped in a <code class="inline">span</code> so we can differentiate between (for instance), the variable <code class="inline">i</code> and the letter i inside <code class="inline">in</code>.
+</p>
+<h3>Wrapping up</h3>
+<p>
+Finally, I want to show what this looks like when every one of these additions is used together.
+</p>
+<div class="codeparent" data-offset=1 data-highlight=2 data-download="/_includes/codeblocks/test.jl" data-bold="i">
+{% highlight julia linenos %}
+{% include /functions/codeblock.html file="/codeblocks/test.jl"%}
+{% endhighlight %}
+</div>
+<p>
+This code block was produced using the following:
+{% highlight html linenos %}
+{% raw %}
+<div class="codeparent" data-offset=1 data-highlight=2 data-download="/_includes/codeblocks/test.jl" data-bold="i">
+{% highlight julia linenos %}
+{% include /functions/codeblock.html file="/codeblocks/test.jl"%}
+{% endhighlight %}
+</div>
+{% endraw %}
+{% endhighlight %}
