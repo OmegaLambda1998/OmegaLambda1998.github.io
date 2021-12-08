@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 899.92357 501.07422"
+   version="1.1"
+   id="svg67"
+   sodipodi:docname="Logo_Only_Colour_invert.svg"
+   width="899.92352"
+   height="501.07422"
+   inkscape:version="1.1 (c4e8f9ed74, 2021-05-24)"
+   inkscape:export-filename="/home/patricka/University/Astrophysics/Website/OmegaLambda/_assets/favicon.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs71" />
+  <sodipodi:namedview
+     id="namedview69"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="0.72100073"
+     inkscape:cx="201.80285"
+     inkscape:cy="363.38382"
+     inkscape:window-width="1920"
+     inkscape:window-height="1053"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Layer_1" />
+  <g
+     id="Layer_1"
+     data-name="Layer 1"
+     transform="translate(-32.250799,-99.515781)">
+    <text
+       transform="translate(505.27,600.59)"
+       font-size="700px"
+       fill="#e5e0d6"
+       font-family="Arial-Black, 'Arial Black'"
+       font-weight="800"
+       id="text57"
+       style="fill:#071738;fill-opacity:1">λ</text>
+    <text
+       transform="matrix(1.03,0,0,1,0,600.21)"
+       font-size="682.19px"
+       fill="#e5e0d6"
+       font-family="Arial-Black, 'Arial Black'"
+       font-weight="800"
+       id="text59"
+       style="fill:#071738;fill-opacity:1">Ω</text>
+    <text
+       x="-471"
+       y="-171.60001"
+       id="text61" />
+  </g>
+  <g
+     id="Layer_2"
+     data-name="Layer 2"
+     transform="translate(-32.250799,-99.515781)">
+    <path
+       d="M 1533,116"
+       transform="translate(-471,-171.6)"
+       fill="#02364a"
+       id="path64" />
+  </g>
+</svg>
