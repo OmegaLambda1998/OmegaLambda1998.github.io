@@ -1,0 +1,222 @@
+/* ==================================================================
+VARIABLES
+================================================================== */
+
+:root {
+    --block-background: hsl(0, 0%, 94%);
+    --background: #e5e0d6;
+    --logo-colour: #02364a;
+    --output-background: hsl(0, 0%, 98%);
+    --small: 0.75em;
+    --normal: 1em;
+    --text-colour: #182844;
+    --banner-colour: #071738;
+}
+
+/* ==================================================================
+Header and Nav
+================================================================== */
+
+nav {
+    width: 64%;
+    display: inline-block;
+}
+
+nav ul {
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav li a {
+    color: var(--background);
+    text-decoration: none;
+    font-size: 1.25em;
+    font-weight: bold;
+    display: inline-block;
+    float: center;
+    padding-top: 10px;
+    padding-right: 2px;
+    padding-left: 2px;
+    padding-bottom: 5px;
+    margin-left: 7px;
+    margin-right: 7px;
+    border-bottom: 2px solid var(--background);
+    transition: color 0.3s ease;
+}
+
+header {
+    min-width: 100%;
+    padding: 0;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+header .header-container {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-content: center;
+    width: 50%;
+    margin: auto;
+}
+
+header .home {
+    width: 35%;
+    display: inline-block;
+    text-align: right;
+    font-size: 18px;
+    font-family: "Lucida Console", Monaco, monospace;
+}
+
+header .home a {
+    text-decoration: none;
+}
+
+header .home a img {
+    width: 20%;
+    height: auto;
+}
+
+header li a:hover {
+    color: var(--logo-colour);
+    border-bottom: 2px solid var(--logo-colour);
+}
+
+#menu-icon {
+    display: none;
+}
+
+/* ultra wide display: shrink logo */
+@media (max-width: 1360px) {
+    header .home a img {
+        width: 60%;
+    }
+}
+
+/* wide display: enforce maximum width of header to match content */
+@media (max-width: 940px) {
+    header .header-container {
+        width: 70%;
+    }
+
+    header .home a img {
+        width: 40%;
+    } 
+}
+
+@media (max-width: 480px) {
+    header .header-container {
+        width: 90%;
+    }
+}
+
+/*
+medium display: nav goes under name
+ */
+@media (max-width: 760px) {
+    header { display: block; }
+
+    header .home {
+        display: block;
+        width: 100%;
+    }
+
+    nav {
+        width: 100%;
+    }
+}
+
+/*
+narrow display: collapse the header (don't show the menu items)
+instead, display a burger menu.
+ */
+@media (max-width: 620px) {
+    header {
+        display: flex;
+        align-items: center;
+    }
+
+    header .home {
+        display: inline-block;
+        width: 70%;
+    }
+
+    header .home a img{
+        width: 30%;
+    }
+
+    nav {
+        position: relative;
+        display: inline-block;
+        width: 27%;
+    }
+
+    nav ul,
+    nav:active ul {
+        display: none;
+        position: absolute;
+
+        /* padding: 20px; */
+        background: var(--banner-colour);
+        border: 1px solid #444;
+        left: 0;
+        top: 5px;
+        min-width: 100%;
+        border-radius: 4px 0 4px 4px;
+        z-index: 1;
+    }
+
+    nav li {
+        text-align: left;
+        display: block;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+    header li a { border-bottom: none; }
+    header li a:hover { border-bottom: none; }
+
+    nav:hover ul {
+        display: block;
+    }
+
+    #menu-icon {
+        display: inline-block;
+        margin-right: 10px;
+        margin-top: 5px;
+    }
+}
+
+table {
+    line-height: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+tr:first-of-type {
+    background: #eae9f4;
+}
+
+tr:first-of-type > th {
+    text-align: center;
+}
+
+tr,
+th,
+td {
+    padding: 10px;
+    border: 1px solid lightgray;
+}
+
+table tbody tr td {
+    border: 1px solid lightgray;
+}

@@ -1,0 +1,4 @@
+Sitemap: https://omegalambda.com.au/sitemap.xml
+
+User-agent: *
+Disallow:
