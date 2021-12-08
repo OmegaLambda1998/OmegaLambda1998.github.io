@@ -1,0 +1,16 @@
+---
+title: Tutorials
+---
+<h1>Tutorials</h1>
+<hr style="width:500px; color: {{ site.bright_colour }}">
+<ul class=linklist>
+    {% for tutorial in site.tutorials %}
+    <li>
+        <a href="{{ tutorial.url }}" class=link>
+            <h2>{{ tutorial.title }}</h2>
+            <h3>{{ tutorial.subtitle }}</h3>
+            <p>{{ tutorial.content | markdownify }}</p>
+        </a>
+    </li>
+    {% endfor %}
+</ul>
