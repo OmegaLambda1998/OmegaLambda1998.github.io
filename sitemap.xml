@@ -8,6 +8,12 @@
     <priority>0.5</priority>
 </url>
 <url>
+    <loc>https://omegalambda.com.au/resume/index.html</loc>
+    <lastmod>2021-12-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
     <loc>https://omegalambda.com.au/_tutorials/default/index.html</loc>
     <lastmod>2021-12-08</lastmod>
     <changefreq>monthly</changefreq>
