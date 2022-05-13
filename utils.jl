@@ -1,3 +1,10 @@
+function hfun_loremipsum()
+    s = """
+    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+    """
+end
+
+
 function hfun_headshot()
     s = """
     <div id="headshot">
@@ -12,7 +19,7 @@ function hfun_getpage(params)
     list = get_pages(params)
     io = IOBuffer()
     write(io, """<div class="cardparent">""")
-    for (i, f) in enumerate(list)
+    for f in list
         write(io, """<div class="card">""")
         write(io, """<a href="$(replace(replace(f, "index.md"=>""), ".md"=>""))">""")
         write(io, """<div class="cardimg"><img src="$(get_param(f[2:end], "img"))"></div>""")
@@ -55,9 +62,8 @@ function get_pages(params)
 end
 
 function get_param(filename, param)
-    raw = ""
-    open(filename, "r") do io
-        raw = readlines(io)
+    raw = open(filename, "r") do io
+        return readlines(io)
     end
     filter!(f -> occursin("@def", f), raw)
     filter!(f -> occursin(param, f), raw)

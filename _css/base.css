@@ -6,6 +6,7 @@
   --block-background: hsl(0, 0%, 94%);
   --background: #e5e0d6;
   --logo-colour: #02364a;
+  --bright-colour: #046c95;
   --output-background: hsl(0, 0%, 98%);
   --small: 0.75em;
   --normal: 1em;
@@ -446,9 +447,13 @@ code {
 /* ==================================================================
     RESUME 
 ================================================================== */
-div.resume {
-    border-style: solid;
-    padding: 5%;
+
+div.resume-left {
+    padding-right: 5%;
+}
+
+div.resume-right {
+    text-align: right;
 }
 
 span.resume-name {
@@ -470,16 +475,28 @@ div.resume-element {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 0.5em 0;
-    padding-bottom: 5%;
+    padding-top: 5%;
+}
+
+h2.break {
+    padding-top: 5%;
+}
+
+h3.break {
+    padding-top: 5%;
 }
 
 span.resume-title {
+    color: var(--bright-colour);
     font-weight: bold;
     width: 49%;
 }
 
 span.resume-place {
     width: 49%;
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
 }
 
 span.resume-detail {
@@ -488,4 +505,7 @@ span.resume-detail {
 
 span.resume-date {
     width: 49%;
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
 }

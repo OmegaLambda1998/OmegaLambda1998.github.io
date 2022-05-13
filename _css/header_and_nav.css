@@ -6,6 +6,7 @@ VARIABLES
     --block-background: hsl(0, 0%, 94%);
     --background: #e5e0d6;
     --logo-colour: #02364a;
+    --bright-colour: #046c95;
     --output-background: hsl(0, 0%, 98%);
     --small: 0.75em;
     --normal: 1em;
@@ -84,8 +85,8 @@ header .home a img {
 }
 
 header li a:hover {
-    color: var(--logo-colour);
-    border-bottom: 2px solid var(--logo-colour);
+    color: var(--bright-colour);
+    border-bottom: 2px solid var(--bright-colour);
 }
 
 #menu-icon {
