@@ -99,6 +99,20 @@
 </div>
 
 <div class="resume-element">
+<span class="resume-title">Astronomical Consultant for ABC Stargazing Live</span>
+<span class="resume-place">ABC Stargazing Live</span>
+<span class="resume-detail">Assisted in preparations for the 2018 ABC Stargazing Live.</span>
+<span class="resume-date">2018</span>
+</div>
+
+<div class="resume-element">
+<span class="resume-title">Programmer &amp; Moderator</span>
+<span class="resume-place">Supernova Sighting Citizen Science Project</span>
+<span class="resume-detail">Built backend code and helped prepare and moderate the Skymapper Citizen Science Project: <a href="https://www.zooniverse.org/projects/skymap/supernova-sighting">Supernova Sighting</a> </span>
+<span class="resume-date">2018</span>
+</div>
+
+<div class="resume-element">
 <span class="resume-title">Questacon Assistant (APS 2)</span>
 <span class="resume-place">Questacon</span>
 <span class="resume-detail">Provided coordination and support to Questacon staff</span>
@@ -113,7 +127,7 @@
 </div>
 
 
-<h2>Awards &amp; Scholarships</h2>
+<h2 class="break">Awards &amp; Scholarships</h2>
 <div class="resume-element">
 <span class="resume-title">Commendation for Excellence in Tutoring or Demonstrating</span>
 <span class="resume-place">ANU College of Science</span>
@@ -157,7 +171,7 @@
 </div>
 
 
-<h2>Conferences</h2>
+<h2 class="break">Conferences</h2>
 <div class="resume-element">
 <span class="resume-title">DES Collaboration Meeting</span>
 <span class="resume-place">Attendee</span>
@@ -179,7 +193,7 @@
 <span class="resume-date">2018</span>
 </div>
 
-<h2 class="break">Communication</h2>
+<h2>Communication</h2>
 <div class="resume-element">
 <span class="resume-title">SN2017jgh: a high-cadence complete shock cooling light curve of a SN IIb with the Kepler telescope</span>
 <span class="resume-place">Over 180 items in print, radio and online, across Australia and internationally</span>
@@ -188,7 +202,7 @@
 </div>
 
 
-<h2>Publications</h2>
+<h2 class="break">Publications</h2>
 <h3>First Author</h3>
 <div class="resume-element">
 <span class="resume-title">SN2017jgh: a high-cadence complete shock cooling light curve of a SN IIb with the Kepler telescope</span>
@@ -248,7 +262,7 @@
 <span class="resume-date">2019</span>
 </div>
 
-<h3 class="break">Astronomer's Telegram &amp; Transient Name Report</h3>
+<h3>Astronomer's Telegram &amp; Transient Name Report</h3>
 <div class="resume-element">
 <span class="resume-title">DEBass Transient Classification Reports</span>
 <span class="resume-place">BIBCODES:
