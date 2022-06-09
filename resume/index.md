@@ -213,6 +213,13 @@
 
 <h3>Co-Author</h3>
 <div class="resume-element">
+<span class="resume-title">The Dark Energy Survey Supernova Program: Cosmological biases from supernova photometric classification</span>
+<span class="resume-place">DOI:&nbsp;<a href="https://academic.oup.com/mnras/advance-article-abstract/doi/10.1093/mnras/stac1404/6601453?redirectedFrom=fulltext">10.1093/mnras/stac1404</a></span>
+<span class="resume-detail">Vincenzi, M.; Sullivan, M. et. al.</span>
+<span class="resume-date">2022</span>
+</div>
+
+<div class="resume-element">
 <span class="resume-title">Measuring Cosmological Parameters with Type Ia Supernovae in redMaGiC galaxies (preprint)</span>
 <span class="resume-place">BIBCODE:&nbsp;<a href="https://ui.adsabs.harvard.edu/abs/2022arXiv220210480C/abstract">2022arXiv220210480C</a></span>
 <span class="resume-detail">Chen, R.; Scolnic, D. et. al.</span>
