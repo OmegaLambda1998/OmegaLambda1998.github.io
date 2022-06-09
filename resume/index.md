@@ -269,7 +269,7 @@
 <span class="resume-date">2019</span>
 </div>
 
-<h3>Astronomer's Telegram &amp; Transient Name Report</h3>
+<h3 class="break">Astronomer's Telegram &amp; Transient Name Report</h3>
 <div class="resume-element">
 <span class="resume-title">DEBass Transient Classification Reports</span>
 <span class="resume-place">BIBCODES:
