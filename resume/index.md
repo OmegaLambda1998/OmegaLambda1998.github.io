@@ -129,6 +129,13 @@
 
 <h2 class="break">Awards &amp; Scholarships</h2>
 <div class="resume-element">
+<span class="resume-title">Alex Rodgers Travelling Scholarship</span>
+<span class="resume-place">ANU College of Science</span>
+<span class="resume-detail">Travel to DES Collaboration meeting 2022</span>
+<span class="resume-date">2022</span>
+</div>
+
+<div class="resume-element">
 <span class="resume-title">Commendation for Excellence in Tutoring or Demonstrating</span>
 <span class="resume-place">ANU College of Science</span>
 <span class="resume-detail">College of Science Dean’s Commendation for Excellence in Education</span>
