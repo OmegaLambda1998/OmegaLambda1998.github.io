@@ -14,6 +14,15 @@
   --banner-colour: #071738;
 }
 
+.fulljustify {
+  text-align: justify;
+}
+.fulljustify:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+}
+
 /* ==================================================================
     DEFAULT FONT AND LAYOUT
 ================================================================== */
@@ -330,7 +339,7 @@ td {
 }
 
 .franklin-content .fndef tr {
-  border-left: 2px solid lightgray;
+  border-left: 2px solid lightgrey;
 }
 
 .franklin-content .fndef td.fndef-backref {
@@ -448,6 +457,26 @@ code {
     RESUME 
 ================================================================== */
 
+div.resume {
+    font-size: 0.6em;
+}
+
+h1.resume-h1 {
+    font-size: 1em;
+    padding-bottom: 0.5em;
+    border-bottom: 3px double lightgrey;
+}
+
+h2.resume-h2 {
+    font-size: 1em;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid lightgrey;
+}
+
+h3.resume-h3 {
+    font-size: 0.9em;
+}
+
 div.resume-left {
     padding-right: 5%;
 }
@@ -475,20 +504,22 @@ div.resume-element {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 0.5em 0;
-    padding-top: 5%;
+    padding-top: 1%;
+    border-bottom: 1px dotted darkgrey; 
 }
 
 h2.break {
-    padding-top: 5%;
+    padding-top: 1%;
 }
 
 h3.break {
-    padding-top: 5%;
+    padding-top: 1%;
 }
 
 span.resume-title {
     color: var(--bright-colour);
     font-weight: bold;
+    font-size: 0.9em;
     width: 49%;
 }
 
@@ -508,4 +539,66 @@ span.resume-date {
     display: flex;
     justify-content: flex-end;
     text-align: right;
+}
+
+/* ==================================================================
+    PROJECTS
+================================================================== */
+div.project {
+    counter-reset: figure;
+}
+
+h1.project {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+
+h2.project {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-style: italic;
+    text-align: right;
+}
+
+h3.project {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-style: none; 
+    text-align: right;
+}
+
+
+div.project-figure {
+    margin-top: 5%;
+    counter-increment: figure;
+    margin-bottom: 5%;
+}
+
+div.project-fig {
+    width: 90%;
+    margin: auto;
+}
+
+img.project-fig {
+    width: 100%;
+    padding: 0;
+}
+
+div.project-caption {
+    width: 90%;
+    margin: auto;
+}
+
+div.project-caption:before {
+    content: "Figure "counter(figure)": "; 
+    font-weight: bold;
 }

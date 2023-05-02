@@ -8,16 +8,15 @@
 </div>
 <div class="resume" id="pdf">
 <div class="resume-header">
-<h1>Patrick Armstrong (He/Him)</h1>
+<h1 class="resume-h1">Patrick Armstrong (He/Him)</h1>
 <div class="resume-split">
 <div class="resume-left">
-<p style="margin: 0">I am a PhD student at the Australian National University, with a background in physics and computing. I am currently studying how to improve systematic uncertainties within dark energy cosmology via simulate and forward modelling the systematics. I am also an active maintainer of the cosmological pipeline <a href="https://github.com/dessn/Pippin">Pippin</a>, and a member of the Dark Energy Survey, where I participate in a number of other cosmological projects.</p>
+<p style="margin: 0">I am a PhD student at the Australian National University, with a background in physics and computing. I am currently studying how to improve systematic uncertainties within dark energy cosmology via simulating and forward modelling the systematics. I am also an active maintainer of the cosmological pipeline <a href="https://github.com/dessn/Pippin">Pippin</a>, and a member of the Dark Energy Survey, where I participate in a number of other cosmological projects.</p>
 </div>
 <div class="resume-right">
 <div class="resume-links">
 <nobr>Website: <a href="https://www.omegalambda.com.au"><i class="fas fa-globe hide"></i> omegalambda.com.au</a></nobr><br>
 <nobr>Email: <a href="mailto:patrick.armstrong@anu.edu.au"><i class="fas fa-envelope hide"></i> patrick.armstrong@anu.edu.au</a></nobr><br>
-<nobr>LinkedIn: <a href="https://www.linkedin.com/in/omega-lambda"><i class="fab fa-linkedin hide"></i> omega-lambda</a></nobr><br>
 <nobr>GitHub: <a href="https://www.github.com/OmegaLambda1998"><i class="fab fa-github hide"></i> OmegaLambda1998</a></nobr><br>
 <nobr>ORCiD: <a href="https://orcid.org/0000-0003-1997-3649"><i class="fab fa-orcid hide"></i> 0000-0003-1997-3649</a></nobr>
 </div>
@@ -25,7 +24,7 @@
 </div>
 </div>
 <div class="resume-main">
-<h2>Education</h2>
+<h2 class="resume-h2">Education</h2>
 <div class="resume-element">
 <span class="resume-title">Doctor of Philosophy</span>
 <span class="resume-place">Australian National University</span>
@@ -40,8 +39,14 @@
 <span class="resume-date">2016-2019</span>
 </div>
 
+<h2 class="resume-h2">Experience</h2>
+<div class="resume-element">
+<span class="resume-title">DEBass Infrastructure Lead</span>
+<span class="resume-place">Dark Energy Bedrock All Sky Survey</span>
+<span class="resume-detail">Develop and maintain the <a href="https://www.mso.anu.edu.au/debass/database/">DEBass Website</a>, as well as automation and analysis tools</span>
+<span class="resume-date">2020-Present</span>
+</div>
 
-<h2 class="break">Experience</h2>
 <div class="resume-element">
 <span class="resume-title">DES Collaboration Member</span>
 <span class="resume-place">Dark Energy Survey</span>
@@ -52,15 +57,15 @@
 <div class="resume-element">
 <span class="resume-title">Astronomical Tutor</span>
 <span class="resume-place">Australian National University</span>
-<span class="resume-detail">Tutor for <i>Galaxies and Cosmology (ASTR3002)</i></span>
-<span class="resume-date">2019-Present</span>
+<span class="resume-detail">Tutor for <i>Galaxies and Cosmology (ASTR3002)</i> at the Australian National University</span>
+<span class="resume-date">2019-2022</span>
 </div>
 
 <div class="resume-element">
 <span class="resume-title">MSATT Student Mentor</span>
 <span class="resume-place">MSATT</span>
 <span class="resume-detail">Provide guidance and mentorship for highschool students completing astronomical projects</span>
-<span class="resume-date">2020-Present</span>
+<span class="resume-date">2020-2023</span>
 </div>
 
 <div class="resume-element">
@@ -127,7 +132,7 @@
 </div>
 
 
-<h2 class="break">Awards &amp; Scholarships</h2>
+<h2 class="resume-h2">Awards &amp; Scholarships</h2>
 <div class="resume-element">
 <span class="resume-title">Alex Rodgers Travelling Scholarship</span>
 <span class="resume-place">ANU College of Science</span>
@@ -178,10 +183,17 @@
 </div>
 
 
-<h2 class="break">Conferences</h2>
+<h2 class="resume-h2">Conferences</h2>
 <div class="resume-element">
 <span class="resume-title">DES Collaboration Meeting</span>
-<span class="resume-place">Attendee</span>
+<span class="resume-place">Invited Speaker</span>
+<span class="resume-detail">Unblinding the 5yr SNe analysis</span>
+<span class="resume-date">2023</span>
+</div>
+
+<div class="resume-element">
+<span class="resume-title">DES Collaboration Meeting</span>
+<span class="resume-place">Invited Speaker</span>
 <span class="resume-detail">Preperation for final 5yr SNe analysis</span>
 <span class="resume-date">2022</span>
 </div>
@@ -200,7 +212,7 @@
 <span class="resume-date">2018</span>
 </div>
 
-<h2>Communication</h2>
+<h2 class="resume-h2">Communication</h2>
 <div class="resume-element">
 <span class="resume-title">SN2017jgh: a high-cadence complete shock cooling light curve of a SN IIb with the Kepler telescope</span>
 <span class="resume-place">Over 180 items in print, radio and online, across Australia and internationally</span>
@@ -209,8 +221,8 @@
 </div>
 
 
-<h2 class="break">Publications</h2>
-<h3>First Author</h3>
+<h2 class="resume-h2">Publications</h2>
+<h3 class="resume-h3">First Author</h3>
 <div class="resume-element">
 <span class="resume-title">SN2017jgh: a high-cadence complete shock cooling light curve of a SN IIb with the Kepler telescope</span>
 <span class="resume-place">DOI:&nbsp;<a href="https://academic.oup.com/mnras/article-abstract/507/3/3125/6338122?redirectedFrom=fulltext">10.1093/mnras/stab2138</a></span>
@@ -218,7 +230,21 @@
 <span class="resume-date">2021</span>
 </div>
 
-<h3>Co-Author</h3>
+<h3 class="resume-h3 break">Co-Author</h3>
+<div class="resume-element">
+<span class="resume-title">Concerning colour: The effect of environment on type Ia supernova colour in the dark energy survey</span>
+<span class="resume-place">DOI:&nbsp;<a href="https://academic.oup.com/mnras/article/519/2/3046/6939845">10.1093/mnras/stac3711 </a></span>
+<span class="resume-detail">Kelsey, L.; Sullivan, M. et. al.</span>
+<span class="resume-date">2022</span>
+</div>
+
+<div class="resume-element">
+<span class="resume-title">Revealing the progenitor of SN 2021zby through analysis of the TESS shock-cooling light curve</span>
+<span class="resume-place">DOI:&nbsp;<a href="https://arxiv.org/abs/2211.03811">10.48550/arXiv.2211.03811 </a></span>
+<span class="resume-detail">Qinan, W.; Armstrong, P.</span>
+<span class="resume-date">2022</span>
+</div>
+
 <div class="resume-element">
 <span class="resume-title">The Dark Energy Survey Supernova Program: Cosmological biases from supernova photometric classification</span>
 <span class="resume-place">DOI:&nbsp;<a href="https://academic.oup.com/mnras/advance-article-abstract/doi/10.1093/mnras/stac1404/6601453?redirectedFrom=fulltext">10.1093/mnras/stac1404</a></span>
@@ -276,18 +302,15 @@
 <span class="resume-date">2019</span>
 </div>
 
-<h3 class="break">Astronomer's Telegram &amp; Transient Name Report</h3>
+<h3 class="resume-h3">Astronomer's Telegram &amp; Transient Name Report</h3>
 <div class="resume-element">
 <span class="resume-title">DEBass Transient Classification Reports</span>
 <span class="resume-place">BIBCODES:
 <ul>
+<li><a href="https://ui.adsabs.harvard.edu/abs/2023TNSCR..33....1L/abstract">2023TNSCR..33....1L</a></li>
+<li><a href="https://ui.adsabs.harvard.edu/abs/2022TNSCR2955....1L/abstract">2022TNSCR2955....1L</a></li>
 <li><a href="https://ui.adsabs.harvard.edu/abs/2021TNSCR4188....1L/abstract">2021TNSCR4188....1L</a></li>
-<li><a href="https://ui.adsabs.harvard.edu/abs/2021TNSCR3934....1L/abstract">2021TNSCR3934....1L</a></li>
-<li><a href="https://ui.adsabs.harvard.edu/abs/2021TNSCR3951....1L/abstract">2021TNSCR3951....1L</a></li>
-<li><a href="https://ui.adsabs.harvard.edu/abs/2021TNSCR3650....1L/abstract">2021TNSCR3650....1L</a></li>
-<li><a href="https://ui.adsabs.harvard.edu/abs/2021TNSCR3660....1L/abstract">2021TNSCR3660....1L</a></li>
-<li><a href="https://ui.adsabs.harvard.edu/abs/2021TNSCR3493....1L/abstract">2021TNSCR3493....1L</a></li>
-<li><a href="https://ui.adsabs.harvard.edu/abs/2021ATel14925....1L/abstract">2021ATel14925....1L</a></li>
+<li>etc...</li>
 </ul>
 </span>
 <span class="resume-detail">Lidman, C.; Tucker, B. E. et. al.</span>
@@ -301,19 +324,7 @@
 <li><a href="https://ui.adsabs.harvard.edu/abs/2018TNSTR.698....1M/abstract">2018TNSTR.698....1M</a></li>
 <li><a href="https://ui.adsabs.harvard.edu/abs/2017TNSTR.974....1M/abstract">2017TNSTR.974....1M</a></li>
 <li><a href="https://ui.adsabs.harvard.edu/abs/2017TNSTR.827....1M/abstract">2017TNSTR.827....1M</a></li>
-<li><a href="https://ui.adsabs.harvard.edu/abs/2017TNSTR.832....1M/abstract">2017TNSTR.832....1M</a></li>
-<li><a href="https://ui.adsabs.harvard.edu/abs/2017TNSTR.837....1M/abstract">2017TNSTR.837....1M</a></li>
-<li><a href="https://ui.adsabs.harvard.edu/abs/2017TNSTR.851....1M/abstract">2017TNSTR.851....1M</a></li>
-<li><a href="https://ui.adsabs.harvard.edu/abs/2017TNSTR.854....1M/abstract">2017TNSTR.854....1M</a></li>
-<li><a href="https://ui.adsabs.harvard.edu/abs/2017TNSTR.899....1M/abstract">2017TNSTR.899....1M</a></li>
-<li><a href="https://ui.adsabs.harvard.edu/abs/2017TNSTR.904....1M/abstract">2017TNSTR.904....1M</a></li>
-<li><a href="https://ui.adsabs.harvard.edu/abs/2017TNSTR.923....1M/abstract">2017TNSTR.923....1M</a></li>
-<li><a href="https://ui.adsabs.harvard.edu/abs/2017TNSTR.927....1M/abstract">2017TNSTR.927....1M</a></li>
-<li><a href="https://ui.adsabs.harvard.edu/abs/2017TNSTR.934....1M/abstract">2017TNSTR.934....1M</a></li>
-<li><a href="https://ui.adsabs.harvard.edu/abs/2017ATel10426....1T/abstract">2017ATel10426....1T</a></li>
-<li><a href="https://ui.adsabs.harvard.edu/abs/2017TNSTR.568....1M/abstract">2017TNSTR.568....1M</a></li>
-<li><a href="https://ui.adsabs.harvard.edu/abs/2017TNSTR.582....1M/abstract">2017TNSTR.582....1M</a></li>
-<li><a href="https://ui.adsabs.harvard.edu/abs/2017TNSTR.593....1M/abstract">2017TNSTR.593....1M</a></li>
+<li>etc...</li>
 </ul>
 </span>
 <span class="resume-detail">Lidman, C.; Tucker, B. E. et. al.</span>
