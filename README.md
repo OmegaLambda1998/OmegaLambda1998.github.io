@@ -1,2 +1,2 @@
 # OmegaLambda1998.github.io
-Website: [omegalambda.com.au](https://omegalambda.com.au/)
+Website: [omegalambda.com.au](https://omegalambda.au/)
