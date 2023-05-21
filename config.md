@@ -15,7 +15,7 @@ ignore = ["node_modules/"]
 generate_rss = true
 website_title = "Omega Lambda"
 website_descr = "Cosmology, Coding, and whatever catched my interest"
-website_url   = "https://omegalambda.com.au/"
+website_url   = "https://omegalambda.au/"
 +++
 
 <!--

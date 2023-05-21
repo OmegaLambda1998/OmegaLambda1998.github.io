@@ -74,6 +74,6 @@ function get_param(filename, param)
         return "$param not found"
     end
     rtn = split(raw[1], "=")[end]
-    rtn = replace(rtn, "\""=>"")
+    rtn = replace(rtn, "\"" => "")
     return rtn
 end
