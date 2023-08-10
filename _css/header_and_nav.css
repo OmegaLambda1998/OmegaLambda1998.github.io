@@ -68,7 +68,7 @@ div.home a img {
 }
 
 label #btn {
-    position: absolute;
+    position: fixed;
     cursor: pointer;
     transition: all 0.5s;
     padding-left: 1vw;

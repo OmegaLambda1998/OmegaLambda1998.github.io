@@ -38,22 +38,22 @@ end
 
 
 function hfun_gettalks()
-    talk_dir = "talks"
-    files = readdir(talk_dir, join=true)
+    archive_dir = "$(@__DIR__)/_assets/archive/"
+    files = readdir(archive_dir, join=true)
     io = IOBuffer()
     write(io, """<div class="cardparent">""")
     for f in files
         if splitext(f)[end] in [".pdf"]
             fname = splitext(basename(f))[1]
-            oname = "$(@__DIR__)/_assets/images/archive/$(replace(basename(f), ".pdf" => "-%03d.png"))"
+            oname = "$(@__DIR__)/_assets/archive/$(replace(basename(f), ".pdf" => "-%03d.png"))"
             name = replace(fname, "_" => " ")
-            cardimg = "/assets/images/archive/$(replace(basename(f), ".pdf" => "-001.png"))"
+            cardimg = "/assets/archive/$(replace(basename(f), ".pdf" => "-001.png"))"
             if !isfile(replace(oname, "-%03d" => "-001"))
                 cmd = string.(split("gs -sDEVICE=pngalpha -sPageList=1 -o $(oname) -r144 $(f)"))
                 run(Cmd(cmd))
             end
             write(io, """<div class="card">""")
-            write(io, """<a href="$(basename(f))">""")
+            write(io, """<a href="/assets/archive/$(basename(f))">""")
             write(io, """<div class="cardimg"><img src="$(cardimg)"></div>""")
             write(io, """<div class="cardcontainer">""")
             write(io, """<div class="cardtitle">$(name)</div>""")
