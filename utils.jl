@@ -1,7 +1,43 @@
+import GitHub
+
+function get_repos()
+    api = GitHub.DEFAULT_API
+    auth = GitHub.authenticate(ENV["GITHUB_TOKEN"])
+    user = GitHub.whoami(api; auth=auth)
+    repos = GitHub.repos(api, user; auth=auth)
+    return repos
+end
+
+function hfun_getrepos()
+    repos = [repo for repo in get_repos()[1] if (!repo.fork && !repo.private && repo.name != "OmegaLambda1998.github.io")]
+
+    reverse!(sort!(repos; lt=(x, y) -> x.created_at < y.created_at))
+    io = IOBuffer()
+    write(io, """<div class="cardparent">""")
+    for repo in repos
+        write(io, """<div class="card">""")
+        write(io, """<a href="/$(repo.name)/">""")
+        write(io, """<div class="cardimg"><img src="$(get_default_img())"></div>""")
+        write(io, """<div class="cardcontainer">""")
+        write(io, """<div class="cardtitle">$(repo.name)</div>""")
+        if !isnothing(repo.description)
+            write(io, """<div class="cardsubtitle">$(repo.description)</div>""")
+        end
+        write(io, """<div class="carddate"><i>$(Dates.format(repo.created_at, "Y-u-d"))</i></div>""")
+        write(io, """</div>""")
+        write(io, """</a>""")
+        write(io, """</div>""")
+    end
+    write(io, "</div>")
+    return String(take!(io))
+end
+
+
 function hfun_loremipsum()
     s = """
     <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
     """
+    return s
 end
 
 
@@ -21,7 +57,7 @@ function hfun_getpage(params)
     write(io, """<div class="cardparent">""")
     for f in list
         write(io, """<div class="card">""")
-        write(io, """<a href="$(replace(replace(f, "index.md"=>""), ".md"=>""))">""")
+        write(io, """<a href="$(replace(replace(f, "index.md" => ""), ".md" => ""))/">""")
         write(io, """<div class="cardimg"><img src="$(get_param(f[2:end], "img"))"></div>""")
         write(io, """<div class="cardcontainer">""")
         write(io, """<div class="cardtitle">$(get_param(f[2:end], "title"))</div>""")
@@ -69,11 +105,15 @@ function get_param(filename, param)
     filter!(f -> occursin(param, f), raw)
     if length(raw) == 0
         if param == "img"
-            return "/assets/images/Logo_Only_Colour.svg"
+            return get_default_img()
         end
         return "$param not found"
     end
     rtn = split(raw[1], "=")[end]
     rtn = replace(rtn, "\"" => "")
     return rtn
+end
+
+function get_default_img()
+    return "/assets/images/Logo_Only_Colour.svg"
 end

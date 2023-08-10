@@ -15,7 +15,7 @@
 </div>
 <div class="resume-right">
 <div class="resume-links">
-<nobr>Website: <a href="https://www.omegalambda.com.au"><i class="fas fa-globe hide"></i> omegalambda.com.au</a></nobr><br>
+<nobr>Website: <a href="https://www.omegalambda.au"><i class="fas fa-globe hide"></i> omegalambda.au</a></nobr><br>
 <nobr>Email: <a href="mailto:patrick.armstrong@anu.edu.au"><i class="fas fa-envelope hide"></i> patrick.armstrong@anu.edu.au</a></nobr><br>
 <nobr>GitHub: <a href="https://www.github.com/OmegaLambda1998"><i class="fab fa-github hide"></i> OmegaLambda1998</a></nobr><br>
 <nobr>ORCiD: <a href="https://orcid.org/0000-0003-1997-3649"><i class="fab fa-orcid hide"></i> 0000-0003-1997-3649</a></nobr>
