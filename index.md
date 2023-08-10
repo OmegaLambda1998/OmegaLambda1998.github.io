@@ -3,16 +3,21 @@
 {{headshot}}
 
 # Projects
-A collection of all my ongoing and completed academic projects
+A collection of all my ongoing and completed academic projects.
 
 {{getpage projects}}
+
+# Archive 
+Some of my better recieved presentations, posters, and talks.
+
+{{gettalks}}
 
 # Articles
 A collection of random (non academic) projects, and miscellaneous interests.
 
 {{getpage articles}}
 
-# Repository Documentation 
-Documentation for all my major repositories
+# Code 
+Github repositories and documentation for all my projects.
 
 {{getrepos}}

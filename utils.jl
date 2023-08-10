@@ -37,6 +37,37 @@ function hfun_getrepos()
 end
 
 
+function hfun_gettalks()
+    talk_dir = "talks"
+    files = readdir(talk_dir, join=true)
+    io = IOBuffer()
+    write(io, """<div class="cardparent">""")
+    for f in files
+        if splitext(f)[end] in [".pdf"]
+            fname = splitext(basename(f))[1]
+            oname = "$(@__DIR__)/_assets/images/archive/$(replace(basename(f), ".pdf" => "-%03d.png"))"
+            name = replace(fname, "_" => " ")
+            cardimg = "/assets/images/archive/$(replace(basename(f), ".pdf" => "-001.png"))"
+            if !isfile(replace(oname, "-%03d" => "-001"))
+                cmd = string.(split("gs -sDEVICE=pngalpha -sPageList=1 -o $(oname) -r144 $(f)"))
+                run(Cmd(cmd))
+            end
+            write(io, """<div class="card">""")
+            write(io, """<a href="$(basename(f))">""")
+            write(io, """<div class="cardimg"><img src="$(cardimg)"></div>""")
+            write(io, """<div class="cardcontainer">""")
+            write(io, """<div class="cardtitle">$(name)</div>""")
+            write(io, """<div class="carddate"><i>$(change_date(mtime(f)))</i></div>""")
+            write(io, """</div>""")
+            write(io, """</a>""")
+            write(io, """</div>""")
+        end
+    end
+    write(io, "</div>")
+    return String(take!(io))
+end
+
+
 function hfun_loremipsum()
     s = """
     <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>

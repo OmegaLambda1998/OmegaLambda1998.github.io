@@ -1,6 +1,6 @@
-@def tabname="Repository Documentation"
+@def tabname="Code"
 
-# Repository Documentation 
-Documentation for all my major repositories
+# Code
+Repositores and documentation for all my projects
 
 {{getrepos}}
