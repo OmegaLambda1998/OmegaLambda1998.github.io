@@ -15,19 +15,11 @@ function hfun_getrepos()
     io = IOBuffer()
     write(io, """<div class="cardparent">""")
     for repo in repos
-        url = """$(globvar("website_url"))$(repo.name)"""
-        cmd = string.(split("wget --spider $(url)"))
-        exists = false
-        try
-            exists = run(Cmd(cmd)).exitcode == 0
-        catch
-            exists = false
-        end
         write(io, """<div class="card">""")
-        if exists
+        if repo.has_pages && (repo.name != "OmegaLambda1998.github.io")
             write(io, """<a href="/$(repo.name)/">""")
         else
-            write(io, """<a href="https://www.github.com/OmegaLambda1998/$(repo.name)/">""")
+            write(io, """<a href="$(repo.html_url)">""")
         end
         write(io, """<div class="cardimg"><img src="$(get_default_img())"></div>""")
         write(io, """<div class="cardcontainer">""")
