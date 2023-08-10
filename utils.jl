@@ -9,7 +9,7 @@ function get_repos()
 end
 
 function hfun_getrepos()
-    repos = [repo for repo in get_repos()[1] if (!repo.fork && !repo.private && repo.name != "OmegaLambda1998.github.io")]
+    repos = [repo for repo in get_repos()[1] if (!repo.fork && !repo.private)]
 
     reverse!(sort!(repos; lt=(x, y) -> x.created_at < y.created_at))
     io = IOBuffer()
