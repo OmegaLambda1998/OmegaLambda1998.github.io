@@ -62,6 +62,7 @@ div.card {
     justify-content: flex-end;
     align-items: flex-end;
     overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 div.card:hover {
@@ -70,6 +71,8 @@ div.card:hover {
 
 div.card a {
     color: var(--text-colour);
+    text-overflow: ellipsis;
+    width: 100%;
 }
 
 div.card a:hover {
@@ -78,6 +81,8 @@ div.card a:hover {
 
 div.cardtitle {
     font-weight: bold;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 div.cardimg {
@@ -92,6 +97,7 @@ div.cardimg img {
 div.cardcontainer {
     padding: 5%;
     background-color: var(--background);
+    text-overflow: ellipsis;
 }
 
 
@@ -612,3 +618,44 @@ div.project-caption:before {
     content: "Figure "counter(figure)": "; 
     font-weight: bold;
 }
+
+
+ /* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  div.card {
+    width: 100%;
+  }
+
+  div.franklin-content {
+    width: 90%;
+  }
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  div.card {
+    width: 45%;
+  }
+
+  div.franklin-content {
+    width: 90%;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  div.franklin-content {
+    width: 70%;
+  }
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  div.card {
+    width: 30%;
+  }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {...} 
