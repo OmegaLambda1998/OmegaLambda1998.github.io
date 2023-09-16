@@ -457,6 +457,16 @@ code {
     RESUME 
 ================================================================== */
 
+div.resume_button {
+  display: flex;
+  justify-content: right;
+  padding-bottom: 1em;
+}
+
+div.resume_button a {
+  color: var(--banner-colour);
+}
+
 div.resume {
     font-size: 0.6em;
 }

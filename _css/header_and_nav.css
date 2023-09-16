@@ -18,23 +18,39 @@ VARIABLES
 Header and Nav
 ================================================================== */
 div.sidebar {
+    display: none;
     top: 0px;
-    left: -10vw;
-    width: 10vw;
-    min-height: 100vh;
-    height: 100vh;
+    left: 0px;
+    width: 100vw;
+    min-height: min-content;
+    height: min-content;
     position: fixed;
     background: var(--logo-colour); 
     transition: all 0.5s ease;
     list-style: none;
     text-decoration: none;
     overflow: auto;
+    z-index : 999;
+}
+
+header {
+    display: flex;
+    align-items: center;
+}
+
+nav#navbar {
+    width: 100%;
 }
 
 div.sidebar ul {
-    padding: 5%;
+    padding: 0px;
+    padding-left: 1vw;
+    padding-right: 1vw;
     list-style: none;
     text-decoration: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 div.sidebar ul li {
@@ -55,6 +71,10 @@ div.sidebar ul li:hover a {
 
 div.home {
     text-align: center;
+    width: 10vw;
+    height: min-content;
+    padding-left: 1vw;
+    padding-right: 1vw;
 }
 
 div.home a img {
@@ -70,15 +90,47 @@ div.home a img {
 label #btn {
     position: fixed;
     cursor: pointer;
-    transition: all 0.5s;
+    /*transition: all 0.5s;*/
     padding-left: 1vw;
     padding-top: 1vh;
+    z-index: 999;
 } 
 
 #check:checked ~ div.sidebar {
-    left: 0;
+    display: block;
 }
 
-#check:checked ~ label #btn {
-    left: 10vw;
+
+
+ /* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    div.home {
+        height: 50%;
+        width: 50%;
+    }
+
+    div.sidebar ul {
+        flex-wrap: wrap;
+    }
+
+    div.sidebar ul li {
+        width: 100%;
+    }
+
+    div.sidebar ul li a {
+        text-align: right;
+    }
+
 }
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {...}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {...}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {...}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {...} 
