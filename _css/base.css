@@ -73,6 +73,10 @@ div.card a {
     color: var(--text-colour);
     text-overflow: ellipsis;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
 }
 
 div.card a:hover {
@@ -87,17 +91,24 @@ div.cardtitle {
 
 div.cardimg {
     overflow: hidden;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 div.cardimg img {
     padding: 0%;
     width: 100%;
+    margin: auto;
+    display: block;
 }
 
 div.cardcontainer {
     padding: 5%;
     background-color: var(--background);
     text-overflow: ellipsis;
+    align-self: flex-end;
+    width: 100%;
 }
 
 
