@@ -1,0 +1,50 @@
+<!doctype html> <html lang=en > <meta charset=UTF-8 > <meta name=viewport  content="width=device-width, initial-scale=1"> <link rel=stylesheet  href="/libs/highlight/github.min.css"> <link rel=stylesheet  href="/css/base.css"> <link rel=stylesheet  href="/css/header_and_nav.css"> <link rel=icon  href="/assets/favicon.png"> <script src="https://kit.fontawesome.com/bf73bd3879.js" crossorigin=anonymous ></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script> <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script> <title>Omega Lambda | Research Tips</title> <input type=checkbox  id=check > <label for=check > <img src="/assets/images/hamburger.svg" id=btn > </label> <div class=sidebar > <header> <div class=home ><a href="/"><img src="/assets/images/Logo_Only_Colour.svg"></a></div> <nav id=navbar > <ul class=navbar-nav > <li class=nav-item ><a class=nav-link  href="/">Home</a> <li class=nav-item ><a class=nav-link  href="/projects/">Projects</a> <li class=nav-item ><a class=nav-link  href="/talks/">Archive</a> <li class=nav-item ><a class=nav-link  href="/articles/">Articles</a> <li class=nav-item ><a class=nav-link  href="/repos/">Code</a> <li class=nav-item ><a class=nav-link  href="https://raw.githubusercontent.com/OmegaLambda1998/PatrickArmstrongResume/master/complete_main.pdf" target=_blank >Résumé<sup><i class="fa fa-external-link fa-xs" aria-hidden=true ></i></sup></a> </ul> </nav> </header> </div> <div class=project-head> <h1 class=project >Research Tips and Tricks</h1> <h2 class=project >Some things I picked up during my PhD</h2> </div> <div class=franklin-content ><h2 id=color_brewer ><a href="#color_brewer" class=header-anchor >Color Brewer</a></h2> <p><a href="https://colorbrewer2.org/#type&#61;sequential&amp;scheme&#61;BuGn&amp;n&#61;3">Color Brewer</a> is a fantastic site for generating a colour scheme for a paper, and making sure it&#39;s colourblind and printer friendly.</p> <h2 id=scalene ><a href="#scalene" class=header-anchor >Scalene</a></h2> <p><a href="https://github.com/plasma-umass/scalene">Scalene</a> is a fast, accurate insanely useful profiler for Python. This <a href="https://www.youtube.com/watch?v&#61;5iEf-_7mM1k">video</a> goes over why it&#39;s so good.</p> <h2 id=overleaf_vim_mode ><a href="#overleaf_vim_mode" class=header-anchor >Overleaf Vim Mode</a></h2> <p>Want to vim-ify your life &#40;why wouldn&#39;t you&#41;?</p> <p>Overleaf has a vim mode, just go to Menu &#40;top left&#41;, then change keybindings from None to vim. You can also change it to emacs... if you must.</p> <h2 id=overleaf_bibliography_workflow ><a href="#overleaf_bibliography_workflow" class=header-anchor >Overleaf Bibliography Workflow</a></h2> <p>I found myself getting annoyed by having to search for bibtex citations for papers I cited previously in other papers</p> <p>I have a project in Overleaf called &quot;Preamble&quot; which contains:</p> <ul> <li><p><code>preamble.tex</code>: All the custom commands, packages, and options I like to have by default.</p> <li><p><code>biblio.bib</code>: An ever expanding bibliography containing every paper I ever cited &#40;currently 6700 lines long&#41;. I make sure to name each citation <code>FirstAuthorSecondAuthorDate</code> so I avoid duplicate entries.</p> </ul> <p>Now whenever I start a new project I simply need to these files <code>From Another Project</code> and then <code>\input&#123;preamble&#125;</code> after <code>documentclass</code> and include <code>\bibliography&#123;biblio.bib&#125;</code> before <code>\end&#123;document&#125;</code>.</p> <h2 id=useful_ssh_config_options ><a href="#useful_ssh_config_options" class=header-anchor >Useful ssh config options</a></h2> <p>If you find yourself ssh-ing into servers a lot, there are a number of ssh config commands you might consider. In <code>~/.ssh/config</code>, the general syntax is:</p> <pre><code class="julia hljs">Host hostname
+    HostName host.name.com
+    User username</code></pre> <p>Allowing you to simply <code>ssh hostname</code> as a proxy for <code>ssh username@host.name.com</code></p> <p>In addition there are a number of options I impose on all ssh hosts:</p> <pre><code class="julia hljs">Host * <span class=hljs-comment ># Apply these options to all hosts</span>
+    ControlMaster auto
+    ControlPersist <span class=hljs-number >4800</span>
+    ControlPath ~/.ssh/control/%r.%h.%p.sock</code></pre> <p>This creates a file in <code>~/.ssh/control/</code> which contains my connection information. As long as I don&#39;t lose network connection, this allows me to keep whatever login authentication I used valid. This means that I login to the server once, this file is created, and then I don&#39;t need to login in again &#40;at least until I restart my computer&#41;.</p> <h2 id=doi2bib ><a href="#doi2bib" class=header-anchor >Doi2Bib</a></h2> <p><a href="https://www.doi2bib.org/">Doi2Bib</a> lets you insert the doi of a paper and get its bibtex citation.</p> <h2 id=interactive_echo ><a href="#interactive_echo" class=header-anchor >Interactive Echo</a></h2> <p>In my .bashrc files on servers I like to have echo commands to state various bits of info, however that makes non-interactive commands like scp and sshfs quite angry, so I usually include the following:</p> <pre><code class="julia hljs">alias interactive_echo=&#x27;[[ $- == *i* ]] &amp;&amp; echo&#x27;</code></pre>
+<p>Which first checks if the session is interactive, and only then echoes.</p>
+<p>You can use a similar syntax to speed up non-interactive ssh commands if the <code>~/.bashrc</code> file on the server you&#39;re connecting to does a lot of work &#40;aliasing, setting up environments, etc...&#41;</p>
+<pre><code class="julia hljs"><span class=hljs-comment ># Test if interactive shell</span>
+<span class=hljs-keyword >if</span> [[ $- == *i* ]]; then
+    <span class=hljs-comment ># Do all your work</span>
+    source ...
+    conda activate ...
+    <span class=hljs-keyword >module</span> load ...
+fi</code></pre>
+<h2 id=python_for_loop_list_comprehension_easy_parallisation ><a href="#python_for_loop_list_comprehension_easy_parallisation" class=header-anchor >Python For Loop / List Comprehension Easy Parallisation</a></h2>
+<p>If you have a for loop like:</p>
+<pre><code class="julia hljs">result_list = []
+<span class=hljs-keyword >for</span> value <span class=hljs-keyword >in</span> list:
+    <span class=hljs-keyword >do</span>
+    stuff
+    to
+    value
+    result_list.append(value)</code></pre>
+<p>Or a list comprehension like:</p>
+<pre><code class="julia hljs">result_list = [do_stuff(value) <span class=hljs-keyword >for</span> value <span class=hljs-keyword >in</span> list]</code></pre>
+<p>Then you can easily parallise this via:</p>
+<pre><code class="julia hljs"><span class=hljs-keyword >import</span> multiprocessing
+from joblib <span class=hljs-keyword >import</span> Parallel, delayed
+
+num_cores = multiprocessing.cpu_count()
+def do_stuff(val):
+    <span class=hljs-keyword >do</span>
+    stuff
+
+result_list = Parallel(n_jobs=num_cores)(delayed(do_stuff(value) <span class=hljs-keyword >for</span> value <span class=hljs-keyword >in</span> list))</code></pre>
+<p>You can even wrap <code>list</code> in <code>tqdm</code> to get a parallel friendly progress bar&#33;</p>
+<div class=page-foot  data-html2canvas-ignore=true >
+  <div class=copyright >
+    &copy; Patrick Armstrong. Last modified: February 06, 2024. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
+  </div>
+</div>
+</div>
+    
+    
+        
+
+
+    
+  <script src="/assets/scripts/set_top.js"></script>
