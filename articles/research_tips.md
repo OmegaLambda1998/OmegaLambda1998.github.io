@@ -90,3 +90,44 @@ def do_stuff(val):
 result_list = Parallel(n_jobs=num_cores)(delayed(do_stuff(value) for value in list))
 ```
 You can even wrap `list` in `tqdm` to get a parallel friendly progress bar!
+
+## Force your latex tables to fit
+I'm sure anyone who's written a scientific paper in latex has come across the issue that your tables just don't fit!
+
+If your table is too wide, then `\resizebox` from `graphicx` can help you out:
+```latex
+\usepackage{graphicx}
+\begin{document}
+
+\begin{table}
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tabular}{c|c}
+Holy moly, this is a very, very, very, very & very, very, very, very wide table!
+\end{tabular}}
+\caption{}
+\label{}
+\end{table}
+
+\end{document}
+```
+
+If instead your table is too long, you can have it cross multiple pages via the `longtable` package:
+```
+\usepackage{longtable}
+\begin{document}
+
+\begin{longtable}{c|c}
+Holy & moly \\
+this & is \\
+a & very \\
+very & very \\
+very & very \\
+very & very \\
+very & very \\
+long & table!
+\end{longtable}
+
+\end{document}
+```
+Unfortunately, longtables require one column layout, so won't work in a two column environemnt, unless you first swap back to one column, create the longtable, then swap back to two column.
