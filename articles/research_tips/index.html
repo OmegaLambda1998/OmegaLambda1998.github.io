@@ -35,6 +35,40 @@ def do_stuff(val):
 
 result_list = Parallel(n_jobs=num_cores)(delayed(do_stuff(value) <span class=hljs-keyword >for</span> value <span class=hljs-keyword >in</span> list))</code></pre>
 <p>You can even wrap <code>list</code> in <code>tqdm</code> to get a parallel friendly progress bar&#33;</p>
+<h2 id=force_your_latex_tables_to_fit ><a href="#force_your_latex_tables_to_fit" class=header-anchor >Force your latex tables to fit</a></h2>
+<p>I&#39;m sure anyone who&#39;s written a scientific paper in latex has come across the issue that your tables just don&#39;t fit&#33;</p>
+<p>If your table is too wide, then <code>\resizebox</code> from <code>graphicx</code> can help you out:</p>
+<pre><code class="latex hljs"><span class=hljs-keyword >\usepackage</span>{graphicx}
+<span class=hljs-keyword >\begin</span>{document}
+
+<span class=hljs-keyword >\begin</span>{table}
+<span class=hljs-keyword >\centering</span>
+<span class=hljs-keyword >\resizebox</span>{<span class=hljs-keyword >\textwidth</span>}{!}{
+<span class=hljs-keyword >\begin</span>{tabular}{c|c}
+Holy moly, this is a very, very, very, very <span class=hljs-built_in >&amp;</span> very, very, very, very wide table!
+<span class=hljs-keyword >\end</span>{tabular}}
+<span class=hljs-keyword >\caption</span>{}
+<span class=hljs-keyword >\label</span>{}
+<span class=hljs-keyword >\end</span>{table}
+
+<span class=hljs-keyword >\end</span>{document}</code></pre>
+<p>If instead your table is too long, you can have it cross multiple pages via the <code>longtable</code> package:</p>
+<pre><code class="julia hljs">\usepackage{longtable}
+\<span class=hljs-keyword >begin</span>{document}
+
+\<span class=hljs-keyword >begin</span>{longtable}{c|c}
+Holy &amp; moly \\
+this &amp; is \\
+a &amp; very \\
+very &amp; very \\
+very &amp; very \\
+very &amp; very \\
+very &amp; very \\
+long &amp; table!
+\<span class=hljs-keyword >end</span>{longtable}
+
+\<span class=hljs-keyword >end</span>{document}</code></pre>
+<p>Unfortunately, longtables require one column layout, so won&#39;t work in a two column environemnt, unless you first swap back to one column, create the longtable, then swap back to two column.</p>
 <div class=page-foot  data-html2canvas-ignore=true >
   <div class=copyright >
     &copy; Patrick Armstrong. Last modified: March 21, 2024. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
