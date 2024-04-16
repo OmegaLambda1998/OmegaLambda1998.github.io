@@ -87,7 +87,7 @@ def do_stuff(val):
     do
     stuff
 
-result_list = Parallel(n_jobs=num_cores)(delayed(do_stuff(value) for value in list))
+result_list = Parallel(n_jobs=num_cores)(delayed(do_stuff)(value) for value in list)
 ```
 You can even wrap `list` in `tqdm` to get a parallel friendly progress bar!
 
