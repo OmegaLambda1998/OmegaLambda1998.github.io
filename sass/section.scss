@@ -1,0 +1,9 @@
+@use "meta/colourscheme" as cs;
+@use "meta/typography" as tp;
+
+html {
+  background-color: cs.$bg-lowlight;
+  color: cs.$bg-highlight;
+  font-size: tp.$font-size;
+  line-height: tp.$line-height;
+}

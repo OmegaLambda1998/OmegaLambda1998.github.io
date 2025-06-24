@@ -1,0 +1,34 @@
+// === Colourscheme ===
+@use "sass:map";
+
+$dark-theme: true !default;
+
+// --- Cool ---
+$cool-lowlight: #121923;
+$cool-midlight: #2F4A59;
+$cool-highlight: #AFC9CE;
+
+// --- Warm ---
+$warm-lowlight: #602914;
+$warm-midlight: #9C6D4C;
+$warm-highlight: #DC9554;
+
+// --- Background ---
+$bg-lowlight: $cool-highlight;
+$bg-midlight: $cool-midlight;
+$bg-highlight: $cool-lowlight;
+@if $dark-theme {
+  $bg-lowlight: $cool-lowlight;
+  $bg-midlight: $cool-midlight;
+  $bg-highlight: $cool-highlight;
+}
+
+// --- Foreground ---
+$fg-lowlight: $warm-highlight;
+$fg-midlight: $warm-midlight;
+$fg-highlight: $warm-lowlight;
+@if $dark-theme {
+  $fg-lowlight: $warm-lowlight;
+  $fg-midlight: $warm-midlight;
+  $fg-highlight: $warm-highlight;
+}
