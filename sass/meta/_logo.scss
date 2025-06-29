@@ -1,10 +1,7 @@
 @use "colourscheme" as cs;
 
-$logo: "img/logo/LogoColourFilled.svg";
-@if cs.$dark-theme {
-  $logo: "img/logo/LogoColour.svg";
-}
-
+@include cs.themed(cs.$themes) {
 img.logo {
-  content:url($logo)
+    content:url(cs.cs("logo"))
+  }
 }

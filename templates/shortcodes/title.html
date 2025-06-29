@@ -1,0 +1,4 @@
+{% if page.title %}{{ page.title | safe }}
+{% elif section.title %}{{ section.title | safe }}
+{% else %}{{ config.title | safe }}
+{% endif %}

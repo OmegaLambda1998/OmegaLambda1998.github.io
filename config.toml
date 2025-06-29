@@ -136,7 +136,7 @@ bottom_footnotes = true
 # This value can be "left", "right", "heading" or "none".
 # "heading" means the full heading becomes the text of the anchor.
 # See "Internal links & deep linking" in the documentation for more information.
-insert_anchor_links = "heading"
+insert_anchor_links = "none"
 
 # Configuration of the link checker.
 [link_checker]

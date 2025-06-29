@@ -1,34 +1,46 @@
 // === Colourscheme ===
 @use "sass:map";
 
+// --- Palette ---
+// Setup all the colours we have access to
+
+// Cool
+$cool-primary: #2F4A59;
+$cool-secondary: #AFC9CE;
+$cool-tertiary: #121923;
+
+// Warm
+$warm-primary: #9C6D4C;
+$warm-secondary: #DC9554;
+$warm-tertiary: #602914;
+
+// --- Definitions ---
+// Default values for a number of common object types
+
 $dark-theme: true !default;
 
-// --- Cool ---
-$cool-lowlight: #121923;
-$cool-midlight: #2F4A59;
-$cool-highlight: #AFC9CE;
+$themes: (
+  light: (
+    bg: $cool-secondary,
+    text: $cool-tertiary,
+    logo: "img/logo/LogoColourFilled.svg",
+  ),
+  dark: (
+    bg: $cool-tertiary,
+    text: $cool-secondary,
+    logo: "img/logo/LogoColour.svg",
+  ),
+);
 
-// --- Warm ---
-$warm-lowlight: #602914;
-$warm-midlight: #9C6D4C;
-$warm-highlight: #DC9554;
-
-// --- Background ---
-$bg-lowlight: $cool-highlight;
-$bg-midlight: $cool-midlight;
-$bg-highlight: $cool-lowlight;
-@if $dark-theme {
-  $bg-lowlight: $cool-lowlight;
-  $bg-midlight: $cool-midlight;
-  $bg-highlight: $cool-highlight;
+@mixin themed($themes) {
+  @each $name, $values in $themes {
+    .#{$name}-theme {
+      $theme-map: $values !global;
+      @content;
+    }
+  }
 }
 
-// --- Foreground ---
-$fg-lowlight: $warm-highlight;
-$fg-midlight: $warm-midlight;
-$fg-highlight: $warm-lowlight;
-@if $dark-theme {
-  $fg-lowlight: $warm-lowlight;
-  $fg-midlight: $warm-midlight;
-  $fg-highlight: $warm-highlight;
+@function cs($key) {
+  @return map-get($theme-map, $key);
 }
