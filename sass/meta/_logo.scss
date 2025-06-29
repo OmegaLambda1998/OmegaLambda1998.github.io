@@ -1,8 +1,8 @@
 @use "colourscheme" as cs;
 
-$logo: "img/logo/svg/LogoColourFilled.svg";
+$logo: "img/logo/LogoColourFilled.svg";
 @if cs.$dark-theme {
-  $logo: "img/logo/svg/LogoColour.svg";
+  $logo: "img/logo/LogoColour.svg";
 }
 
 img.logo {
