@@ -8,8 +8,8 @@ nav ul {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 20vh;
-  font-size: 5rem;
+  height: 15vh;
+  font-size: 3rem;
   display: inline-grid;
   grid-template-rows: 1fr;
   grid-template-columns: auto;
@@ -76,23 +76,31 @@ nav ul {
 
 // === Breakpoints ===
 
-// BP: md
+// BP: lg
 nav ul {
-  @include bp.break(md) {
-    height: 15vh;
-  font-size: 3rem;
+  @include bp.break(lg) {
+    height: 12.5vh;
+  font-size: 2.5rem;
   }
 }
 
-// BP: xs
+// BP: md
 nav ul {
-  @include bp.break(xs) {
+  @include bp.break(md) {
     height: 10vh;
   font-size: 2rem;
   }
 }
 
-// BP: xxs
+// BP: sm
+nav ul {
+  @include bp.break(sm) {
+    height: 7.5vh;
+  font-size: 1.5rem;
+  }
+}
+
+// BP: xs
 nav ul {
   @include bp.break(xs) {
     height: 5vh;
@@ -100,9 +108,55 @@ nav ul {
   }
 }
 
+// BP: xxs
+nav ul {
+  @include bp.break(xxs) {
+    height: 5vh;
+  font-size: 1rem;
+  }
+}
+
 
 // When on a small display, hide nav elements and display collapsible button
-@include bp.break(xs) {
+@include bp.break(xxxs) {
+  nav ul {
+    li:first-child {
+      grid-column: 1;
+      grid-row: 1 / span 2;
+    }
+    li:last-child {
+      grid-column: -2;
+      grid-row: 1 / span 2;
+      width: auto;
+      justify-self: end;
+    }
+    // li {
+    //   grid-column: 2;
+    // }
+    grid-template-columns: auto 1fr 1fr auto;
+    grid-auto-rows: 1fr;
+    grid-auto-flow: row;
+  }
+  li.collapse {
+      display: none;
+  }
+  // If the collapsible button is checked, show the hidden items
+  nav:has(input.collapse:checked) {
+    @include bp.break(xxxs) {
+      ul li.collapse {
+        display: list-item
+      }
+    }
+  }
+}
+@include bp.break(xxxs, $gt: true) {
+  nav ul li:has(input.collapse) {
+    display: none;
+  }
+}
+
+// When on a small display, hide nav elements and display collapsible button
+@include bp.break(xxxxs) {
   nav ul {
     li:first-child {
       grid-column: 1;
@@ -114,9 +168,6 @@ nav ul {
       width: auto;
       justify-self: end;
     }
-    li {
-      grid-column: 2;
-    }
     grid-template-columns: auto 1fr auto;
     grid-auto-rows: 1fr;
     grid-auto-flow: row;
@@ -126,15 +177,15 @@ nav ul {
   }
   // If the collapsible button is checked, show the hidden items
   nav:has(input.collapse:checked) {
-    @include bp.break(xs) {
+    @include bp.break(xxxxs) {
       ul li.collapse {
         display: list-item
       }
     }
   }
 }
-@include bp.break(xs, $gt: true) {
-  nav ul li:has(input.collapse) {
-    display: none;
-  }
-}
+// @include bp.break(xxxxs, $gt: true) {
+//   nav ul li:has(input.collapse) {
+//     display: none;
+//   }
+// }
