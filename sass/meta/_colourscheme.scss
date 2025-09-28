@@ -17,30 +17,49 @@ $warm-tertiary: #602914;
 // --- Definitions ---
 // Default values for a number of common object types
 
-$dark-theme: true !default;
+$inverse: (
+  light: "dark",
+  dark: "light"
+);
 
 $themes: (
   light: (
     bg: $cool-secondary,
+    hl: $warm-secondary,
     text: $cool-tertiary,
     logo: "img/logo/LogoColourFilled.svg",
   ),
   dark: (
     bg: $cool-tertiary,
+    hl: $warm-tertiary,
     text: $cool-secondary,
     logo: "img/logo/LogoColour.svg",
   ),
 );
 
-@mixin themed($themes) {
+@mixin themed($themes, $invert: false) {
   @each $name, $values in $themes {
-    .#{$name}-theme {
-      $theme-map: $values !global;
-      @content;
+    @if $invert {
+      .#{map-get($inverse, $name)}-theme {
+        $theme-map: $values !global;
+        @content;
+      };
+    } @else {
+      .#{$name}-theme {
+        $theme-map: $values !global;
+        @content;
+      }
     }
   }
 }
 
 @function cs($key) {
   @return map-get($theme-map, $key);
+}
+
+
+// Colour Scheme
+@include themed($themes) {
+    background-color: cs("bg");
+    color: cs("text");
 }

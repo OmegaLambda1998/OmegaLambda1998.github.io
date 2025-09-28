@@ -1,12 +1,7 @@
 @use "meta/colourscheme" as cs;
 @use "meta/typography" as tp;
-@use "meta/logo";
-
-// Colour Scheme
-@include cs.themed(cs.$themes) {
-    background-color: cs.cs("bg");
-    color: cs.cs("text");
-}
+@use "logo";
+@use "nav";
 
 html {
   font-size: tp.$font-size;

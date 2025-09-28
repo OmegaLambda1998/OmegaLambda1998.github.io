@@ -1,0 +1,22 @@
+@use "meta/colourscheme" as cs;
+
+img.logo {
+  width: 100%;
+  height: 100%;
+}
+
+// === Colourscheme ===
+
+@include cs.themed(cs.$themes) {
+  img.logo {
+    content:url(cs.cs("logo"))
+  }
+}
+
+@include cs.themed(cs.$themes, $invert: true) {
+  img.logo {
+    &:hover {
+      content:url(cs.cs("logo"))
+    }
+  }
+}

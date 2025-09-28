@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ config.title }} - {% block title %}{% endblock title %}</title>
     <meta name="description" content="{% block description %}{% endblock description %}}{{ config.description }}">
-    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="/base.css">
     {% block head %}{% endblock head %}
   </head>
   <body>
-    {% include 'base/header.html' %}{% block header %}{% endblock header %}
+    {% include 'base/nav.html' %}{% block nav %}{% endblock nav %}
+    {% include 'base/header.html' %}{% block header%}{% endblock header%}
     <main>{% block content %}{% endblock content %}</main>
     {% include 'base/footer.html' %}{% block footer %}{% endblock footer %}
   </body>
