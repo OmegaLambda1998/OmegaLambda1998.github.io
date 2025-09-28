@@ -92,6 +92,14 @@ nav ul {
   }
 }
 
+// BP: xxs
+nav ul {
+  @include bp.break(xs) {
+    height: 5vh;
+  font-size: 1rem;
+  }
+}
+
 
 // When on a small display, hide nav elements and display collapsible button
 @include bp.break(xs) {
