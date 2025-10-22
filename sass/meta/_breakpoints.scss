@@ -13,11 +13,11 @@ $breakpoints: (
   @if map-has-key($breakpoints, $breakpoint) {
     $width: map-get($breakpoints, $breakpoint);
     @if $gt {
-      @media screen and (min-width: $width) {
+      @media (min-width: $width) {
         @content;
       }
     } @else {
-      @media screen and (max-width: $width) {
+      @media (max-width: $width) {
         @content;
       }
     }
