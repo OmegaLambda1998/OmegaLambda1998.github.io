@@ -141,13 +141,12 @@ nav ul {
   }
   // If the collapsible button is checked, show the hidden items
   nav:has(input.collapse:checked) {
-    @include bp.break(xxxs) {
       ul li.collapse {
         display: list-item
-      }
     }
   }
 }
+
 @include bp.break(xxxs, $gt: true) {
   nav ul li:has(input.collapse) {
     display: none;
@@ -169,16 +168,5 @@ nav ul {
     grid-template-columns: auto 1fr auto;
     grid-auto-rows: 1fr;
     grid-auto-flow: row;
-  }
-  li.collapse {
-      display: none;
-  }
-  // If the collapsible button is checked, show the hidden items
-  nav:has(input.collapse:checked) {
-    @include bp.break(xxxxs) {
-      ul li.collapse {
-        display: list-item
-      }
-    }
   }
 }
