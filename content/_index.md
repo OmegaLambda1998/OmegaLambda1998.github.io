@@ -56,5 +56,3 @@ generate_feeds = false
 # Your own data.
 [extra]
 +++
-
-Welcome to my attempt at organising and archiving my life. Here you will find as close to a complete record of who I am and what I do as I am willing to share with anonymous dwellers on the internet (such as yourself). This repository is organised into a PARA-like structure, which distributes topics into four categories:
