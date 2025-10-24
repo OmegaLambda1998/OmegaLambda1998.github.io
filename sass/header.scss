@@ -1,0 +1,25 @@
+@use "meta/colourscheme" as cs;
+
+// === Basics ===
+
+@include cs.themed(cs.$themes, $invert: true) {
+  header h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:before, &:after {
+      background-color: cs.cs("hl");
+      content: "";
+      display: inline-block;
+      height: 1px;
+      position: relative;
+      vertical-align: middle;
+      width: 100%;
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+  }
+}
+
+// === Colour Theme ===
+

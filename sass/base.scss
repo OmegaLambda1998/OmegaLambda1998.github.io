@@ -2,6 +2,7 @@
 @use "meta/typography" as tp;
 @use "logo";
 @use "nav";
+@use "header";
 
 html {
   font-size: tp.$font-size;

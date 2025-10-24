@@ -3,6 +3,12 @@
 
 // === Basics ===
 
+@include cs.themed(cs.$themes) {
+  nav {
+    margin-bottom: 5vh;
+  }
+}
+
 nav ul {
   list-style-type: none;
   margin: 0;
@@ -25,9 +31,9 @@ nav ul {
   li:first-child {
     justify-self: start;
   }
-  li:has(input.collapse) {
-      justify-self: end;
-  }
+  // li:has(input.collapse) {
+  //     justify-self: end;
+  // }
   li {
     min-height: 0;
     justify-self: center;
@@ -40,16 +46,16 @@ nav ul {
       justify-content: center;
       align-items: center;
     }
-    input.collapse {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      text-decoration: none;
-      padding: 2px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+    // input.collapse {
+    //   height: 100%;
+    //   margin: 0;
+    //   padding: 0;
+    //   text-decoration: none;
+    //   padding: 2px;
+    //   display: flex;
+    //   justify-content: center;
+    //   align-items: center;
+    // }
   }
 }
 
@@ -60,7 +66,8 @@ nav ul {
     a {
       color: cs.cs("text");
     }
-    &:not(:first-child):not(:last-child) {
+    &:not(:first-child) {
+    // &:not(:first-child):not(:last-child) {
       border-bottom: 1px solid cs.cs("hl");
     }
   }
@@ -132,31 +139,32 @@ nav ul {
       grid-column: 1;
       grid-row: 1 / span 2;
     }
-    li:last-child {
-      grid-column: -2;
-      grid-row: 1 / span 2;
-      width: auto;
-    }
-    grid-template-columns: auto 1fr 1fr auto;
+    // li:last-child {
+    //   grid-column: -2;
+    //   grid-row: 1 / span 2;
+    //   width: auto;
+    // }
+    // grid-template-columns: auto 1fr 1fr auto;
+    grid-template-columns: auto 1fr 1fr;
     grid-auto-rows: 1fr;
     grid-auto-flow: row;
   }
-  li.collapse {
-      display: none;
-  }
+  // li.collapse {
+  //     display: none;
+  // }
   // If the collapsible button is checked, show the hidden items
-  nav:has(input.collapse:checked) {
-      ul li.collapse {
-        display: list-item
-    }
-  }
+  // nav:has(input.collapse:checked) {
+  //     ul li.collapse {
+  //       display: list-item
+  //   }
+  // }
 }
 
-@include bp.break(xxxs, $gt: true) {
-  nav ul li:has(input.collapse) {
-    display: none;
-  }
-}
+// @include bp.break(xxxs, $gt: true) {
+//   nav ul li:has(input.collapse) {
+//     display: none;
+//   }
+// }
 
 // When on a small display, hide nav elements and display collapsible button
 @include bp.break(xxxxs) {
@@ -165,12 +173,13 @@ nav ul {
       grid-column: 1;
       grid-row: 1 / span 4;
     }
-    li:last-child {
-      grid-column: -2;
-      grid-row: 1 / span 4;
-      width: auto;
-    }
-    grid-template-columns: auto 1fr auto;
+    // li:last-child {
+    //   grid-column: -2;
+    //   grid-row: 1 / span 4;
+    //   width: auto;
+    // }
+    // grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto 1fr;
     grid-auto-rows: 1fr;
     grid-auto-flow: row;
   }

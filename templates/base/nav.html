@@ -7,7 +7,7 @@
             {% set page = get_section(path=section, metadata_only=true) %}
             <li class="collapse"><a href={{page.path}}>{{page.title}}</a></li>
         {% endfor %}
-        <li><input type="checkbox" class="collapse" name="nav-collapse"></li>
+        {# <li><input type="checkbox" class="collapse" name="nav-collapse"></li> #}
     </ul>
 </nav>
 {% endblock nav %}

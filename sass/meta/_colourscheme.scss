@@ -25,12 +25,14 @@ $inverse: (
 $themes: (
   light: (
     bg: $cool-secondary,
+    mid: $cool-primary,
     hl: $warm-secondary,
     text: $cool-tertiary,
     logo: "img/logo/LogoColourFilled.svg",
   ),
   dark: (
     bg: $cool-tertiary,
+    mid: $cool-primary,
     hl: $warm-tertiary,
     text: $cool-secondary,
     logo: "img/logo/LogoColour.svg",
