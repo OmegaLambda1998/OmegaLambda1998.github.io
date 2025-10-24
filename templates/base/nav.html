@@ -5,9 +5,8 @@
         {% set root = get_section(path="_index.md", metadata_only=true) %}
         {% for section in root.subsections %}
             {% set page = get_section(path=section, metadata_only=true) %}
-            <li class="collapse"><a href={{page.path}}>{{page.title}}</a></li>
+            <li><a href={{page.path}}>{{page.title}}</a></li>
         {% endfor %}
-        {# <li><input type="checkbox" class="collapse" name="nav-collapse"></li> #}
     </ul>
 </nav>
 {% endblock nav %}
