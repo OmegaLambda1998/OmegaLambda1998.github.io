@@ -5,6 +5,15 @@
 
 nav {
   margin-bottom: 5vh;
+  z-index: 1;
+  position: sticky;
+  top: 0;
+}
+
+@include cs.themed(cs.$themes) {
+  nav {
+    background-color: cs.cs("bg");
+  }
 }
 
 nav ul {

@@ -6,7 +6,8 @@
 html {
   font-size: tp.$font-size;
   line-height: tp.$line-height;
-  content: "",
+  content: "";
+  z-index: 0;
 }
 
 @media (prefers-color-scheme: light) {

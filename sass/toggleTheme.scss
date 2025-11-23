@@ -1,6 +1,7 @@
 @use "meta/colourscheme" as cs;
 
 button.toggleTheme {
+  z-index: 1;
   position: fixed;
   bottom: 5px;
   right: 5px;
