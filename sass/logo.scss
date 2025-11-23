@@ -12,11 +12,3 @@ img.logo {
     content:url(cs.cs("logo"))
   }
 }
-
-@include cs.themed(cs.$themes, $invert: true) {
-  img.logo {
-    &:hover {
-      content:url(cs.cs("logo"))
-    }
-  }
-}

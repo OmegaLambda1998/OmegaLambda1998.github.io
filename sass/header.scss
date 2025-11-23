@@ -26,7 +26,7 @@ h1 {
 @include cs.themed(cs.$themes, $invert: true) {
 h1 {
   &:before, &:after {
-    background-color: cs.cs("hl");
+    background-color: cs.cs("alt-fg");
   }
 }
 }

@@ -1,0 +1,5 @@
+{% block pages %}
+{% for page in section.pages %}
+    <a href={{page.path}}>{{page.title}}</a>
+{% endfor %}
+{% endblock pages %}

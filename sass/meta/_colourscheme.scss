@@ -24,17 +24,21 @@ $inverse: (
 
 $themes: (
   light: (
-    bg: $cool-secondary,
-    mid: $cool-primary,
-    hl: $warm-secondary,
+    fg: $cool-primary,
+    alt-fg: $warm-primary,
     text: $cool-tertiary,
+    alt-text: $warm-tertiary,
+    bg: $cool-secondary,
+    alt-bg: $warm-secondary,
     logo: "img/logo/LogoColourFilled.svg",
   ),
   dark: (
-    bg: $cool-tertiary,
-    mid: $cool-primary,
-    hl: $warm-tertiary,
+    fg: $cool-primary,
+    alt-fg: $warm-primary,
     text: $cool-secondary,
+    alt-text: $warm-secondary,
+    bg: $cool-tertiary,
+    alt-bg: $warm-tertiary,
     logo: "img/logo/LogoColour.svg",
   ),
 );

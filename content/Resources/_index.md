@@ -1,13 +1,13 @@
 +++
-title = "Numenor"
+title = "Resources"
 description = ""
 # A draft section is only loaded if the `--drafts` flag is passed to `zola build`, `zola serve` or `zola check`.
 draft = false
 # Used to sort pages by "date", "update_date", "title", "title_bytes", "weight", "slug" or "none". See below for more information.
-sort_by = "none"
+sort_by = "weight"
 # Used by the parent section to order its subsections.
 # Lower values have higher priority.
-weight = 0
+weight = 2
 # Template to use to render this section page.
 template = "section.html"
 # The given template is applied to ALL pages below the section, recursively.
@@ -15,7 +15,7 @@ template = "section.html"
 # will always use the closest to itself.
 # However, a page's own `template` variable will always have priority.
 # Not set by default.
-page_template = "page.html"
+page_template = "resource.html"
 # This sets the number of pages to be displayed per paginated page.
 # No pagination will happen if this isn't set or if the value is 0.
 paginate_by = 0

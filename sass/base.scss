@@ -13,3 +13,14 @@ main {
   margin-left: 5%;
   margin-right: 5%;
 }
+
+@include cs.themed(cs.$themes) {
+    a {
+      text-decoration: none;
+      color: cs.cs("text");
+      border-bottom: 1px solid cs.cs("fg");
+      &:hover {
+          border-bottom: 1px solid cs.cs("alt-fg");
+        }
+    }
+}
