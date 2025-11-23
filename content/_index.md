@@ -1,6 +1,6 @@
 +++
 title = "Home"
-description = "Homepage"
+description = "Welcome to my attempt at organising and archiving my life. Here you will find as close to a complete record of who I am and what I do as I am willing to share with anonymous dwellers on the internet (such as yourself)."
 # A draft section is only loaded if the `--drafts` flag is passed to `zola build`, `zola serve` or `zola check`.
 draft = false
 # Used to sort pages by "date", "update_date", "title", "title_bytes", "weight", "slug" or "none". See below for more information.
@@ -56,4 +56,3 @@ generate_feeds = false
 # Your own data.
 [extra]
 +++
-Welcome to my attempt at organising and archiving my life. Here you will find as close to a complete record of who I am and what I do as I am willing to share with anonymous dwellers on the internet (such as yourself).

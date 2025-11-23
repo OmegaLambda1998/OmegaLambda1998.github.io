@@ -3,14 +3,31 @@
 
 // === Basics ===
 
-h1, h2, h3, h4, h5 {
-  font-size: 3.5rem;
+h1, h2, h3, h4, h5, h6 {
+  font-size: 2.0rem;
   margin-top: 3.5vh;
   margin-bottom: 3.5vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  // justify-content: center;
   text-align: center;
+  &:before {
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 2.5%;
+    margin-right: 2.5%;
+    background-color: cs.cs("alt-fg");
+    color: cs.cs("alt-fg");
+  }
+}
+
+header h1 {
+  font-size: 3.0rem;
+  margin-top: 4.0vh;
+  margin-bottom: 4.0vh;
   &:before, &:after {
     content: "";
     display: inline-block;
@@ -18,101 +35,56 @@ h1, h2, h3, h4, h5 {
     position: relative;
     vertical-align: middle;
     min-width: 10%;
-    width: 100%;
     background-color: cs.cs("alt-fg");
     color: cs.cs("alt-fg");
     flex-shrink: 100000000000;
-  }
-  &:before {
+    width: 100%;
     margin-left: 2.5%;
     margin-right: 2.5%;
   }
-  &:after {
-    margin-left: 2.5%;
-    margin-right: 2.5%;
-  }
-}
-
-header h1 {
-  font-size: 4.0rem;
-  margin-top: 4.0vh;
-  margin-bottom: 4.0vh;
 }
 
 h2 {
-  font-size: 3.0rem;
+  font-size: 1.8rem;
   margin-top: 3.0vh;
   margin-bottom: 3.0vh;
     &:before {
-      margin-left: 5%;
-      margin-right: 5%;
-    }
-    &:after {
-      margin-left: 5%;
-      margin-right: 5%;
+      width: 5%;
     }
 }
 
 h3 {
-  font-size: 2.5rem;
+  font-size: 1.6rem;
   margin-top: 2.5vh;
   margin-bottom: 2.5vh;
     &:before {
-      margin-left: 7.5%;
-      margin-right: 7.5%;
-    }
-    &:after {
-      margin-left: 7.5%;
-      margin-right: 7.5%;
+      width: 7.5%;
     }
 }
 
 h4 {
-  font-size: 2.0rem;
+  font-size: 1.4rem;
   margin-top: 2.0vh;
   margin-bottom: 2.0vh;
     &:before {
-      margin-left: 10%;
-      margin-right: 10%;
-    }
-    &:after {
-      margin-left: 10%;
-      margin-right: 10%;
+      width: 10%;
     }
 }
 
 h5 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-top: 1.5vh;
   margin-bottom: 1.5vh;
     &:before {
-      margin-left: 12.5%;
-      margin-right: 12.5%;
-    }
-    &:after {
-      margin-left: 12.5%;
-      margin-right: 12.5%;
+      width: 12.5%;
     }
 }
 
-// BP: xxxs
-@include bp.break(xs) {
-  header h1 {
-    font-size: 2.0rem;
-  }
-  h1 {
-    font-size: 1.8rem;
-  }
-  h2 {
-    font-size: 1.6rem;
-  }
-  h3 {
-    font-size: 1.4rem;
-  }
-  h4 {
-    font-size: 1.2rem;
-  }
-  h5 {
-    font-size: 1.0rem;
-  }
+h6 {
+  font-size: 1.0rem;
+  margin-top: 1.0vh;
+  margin-bottom: 1.0vh;
+    &:before {
+      width: 15%;
+    }
 }

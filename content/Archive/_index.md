@@ -1,6 +1,6 @@
 +++
 title = "Archive"
-description = ""
+description = "When a project has been completed, an area is no longer relevant, or a resource becomes deprecated or defunct, they are moved here. This avoids losing information but ensures everything within the preceding categories remains relevant."
 # A draft section is only loaded if the `--drafts` flag is passed to `zola build`, `zola serve` or `zola check`.
 draft = false
 # Used to sort pages by "date", "update_date", "title", "title_bytes", "weight", "slug" or "none". See below for more information.
