@@ -49,7 +49,6 @@ function getCurrentTheme() {
 function setTheme(theme) {
     var classes = getClassList();
     const old_theme = getCurrentTheme();
-    console.log(old_theme, theme);
     if (old_theme != theme) {
         if (old_theme) {
             classes.toggle(old_theme);
@@ -93,7 +92,6 @@ function initialiseTheme() {
         mqLight.addEventListener('change', listener);
     }
 
-    console.log(getStoredTheme(), getDefaultTheme(), THEMES[0]);
     const theme = getStoredTheme() || getDefaultTheme() || THEMES[0];
     setTheme(theme);
 }
