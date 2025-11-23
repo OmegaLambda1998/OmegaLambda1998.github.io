@@ -1,17 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" class="dark-theme">
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ config.title }} - {% block title %}{% endblock title %}</title>
-    <meta name="description" content="{% block description %}{% endblock description %}}{{ config.description }}">
-    <link rel="stylesheet" href="/base.css">
-    {% block head %}{% endblock head %}
+    {% block head %}{% include 'base/head.html' %}{% endblock head %}
   </head>
   <body>
-    {% include 'base/nav.html' %}{% block nav %}{% endblock nav %}
-    {% include 'base/header.html' %}{% block header%}{% endblock header%}
+    <nav>{% block nav %}{% include 'base/nav.html' %}{% endblock nav %}</nav>
+    <header>{% block header %}{% include 'base/header.html' %}{% endblock header %}</header>
     <main>{% block content %}{% endblock content %}</main>
-    {% include 'base/footer.html' %}{% block footer %}{% endblock footer %}
+    <footer>{% block footer %}{% include 'base/footer.html' %}{% endblock footer %}</footer>
   </body>
 </html>

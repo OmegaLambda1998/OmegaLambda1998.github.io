@@ -31,6 +31,7 @@ $themes: (
     bg: $cool-secondary,
     alt-bg: $warm-secondary,
     logo: "img/logo/LogoColourFilled.svg",
+    theme: '<i class=fa-sun></i>',
   ),
   dark: (
     fg: $cool-primary,
@@ -40,6 +41,7 @@ $themes: (
     bg: $cool-tertiary,
     alt-bg: $warm-tertiary,
     logo: "img/logo/LogoColour.svg",
+    theme: '<i class=fa-moon></i>',
   ),
 );
 

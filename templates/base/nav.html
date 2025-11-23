@@ -1,12 +1,8 @@
-{% block nav %}
-<nav>
-    <ul>
-        <li><a href="/"><img class="logo"></a></li>
-        {% set root = get_section(path="_index.md", metadata_only=true) %}
-        {% for section in root.subsections %}
-            {% set page = get_section(path=section, metadata_only=true) %}
-            <li><a href={{page.path}}>{{page.title}}</a></li>
-        {% endfor %}
-    </ul>
-</nav>
-{% endblock nav %}
+<ul>
+    <li><a href="/"><img class="logo"></a></li>
+    {% set root = get_section(path="_index.md", metadata_only=true) %}
+    {% for section in root.subsections %}
+        {% set page = get_section(path=section, metadata_only=true) %}
+        <li><a href={{page.path}}>{{page.title}}</a></li>
+    {% endfor %}
+</ul>

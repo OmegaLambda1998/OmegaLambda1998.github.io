@@ -1,0 +1,23 @@
+@use "meta/colourscheme" as cs;
+
+button.toggleTheme {
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  line-height: 1;
+}
+
+@include cs.themed(cs.$themes) {
+  button.toggleTheme {
+    background-color: cs.cs("fg");
+    i {
+      color: cs.cs("text");
+      line-height: 1;
+    }
+  }
+}

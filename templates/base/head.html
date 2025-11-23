@@ -1,0 +1,8 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ config.title }} - {% block title %}{% include 'shortcodes/title.html' %}{% endblock title %}</title>
+<meta name="description" content="{% block description %}{{ config.description }}{% endblock description %}}">
+<link rel="stylesheet" href="/base.css">
+<script src="/js/theme.js"></script>
+<script src="https://kit.fontawesome.com/6e7ae0e84a.js" crossorigin="anonymous"></script>
+{% block inner_head %}{% endblock inner_head %} 

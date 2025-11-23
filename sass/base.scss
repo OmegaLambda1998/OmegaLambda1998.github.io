@@ -1,12 +1,24 @@
 @use "meta/colourscheme" as cs;
 @use "meta/typography" as tp;
-@use "logo";
-@use "nav";
-@use "header";
+@use "lib";
+
 
 html {
   font-size: tp.$font-size;
   line-height: tp.$line-height;
+  content: "",
+}
+
+@media (prefers-color-scheme: light) {
+  html {
+    content: "light-theme";
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    content: "dark-theme";
+  }
 }
 
 main {
@@ -15,14 +27,14 @@ main {
 }
 
 @include cs.themed(cs.$themes) {
-    a {
-      text-decoration: none;
-      color: cs.cs("text");
-      border-bottom: 1px solid cs.cs("fg");
-      &:hover {
-          border-bottom: 1px solid cs.cs("alt-fg");
-        }
-    }
+  a {
+    text-decoration: none;
+    color: cs.cs("text");
+    border-bottom: 1px solid cs.cs("fg");
+    &:hover {
+        border-bottom: 1px solid cs.cs("alt-fg");
+      }
+  }
 }
 
 p {

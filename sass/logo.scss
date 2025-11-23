@@ -9,6 +9,6 @@ img.logo {
 
 @include cs.themed(cs.$themes) {
   img.logo {
-    content:url(cs.cs("logo"))
+    content: url(cs.cs("logo"))
   }
 }
