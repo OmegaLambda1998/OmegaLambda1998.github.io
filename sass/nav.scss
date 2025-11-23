@@ -52,7 +52,7 @@ nav ul {
 nav ul {
   @include bp.break(lg) {
     height: 10vh;
-  font-size: 2.5rem;
+    font-size: 2.5rem;
   }
 }
 
@@ -60,7 +60,7 @@ nav ul {
 nav ul {
   @include bp.break(md) {
     height: 10vh;
-  font-size: 2.25rem;
+    font-size: 2.25rem;
   }
 }
 
