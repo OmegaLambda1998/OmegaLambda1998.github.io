@@ -2,35 +2,94 @@
 
 // === Basics ===
 
-h1 {
-  font-size: 2.5rem;
+h1, h2, h3, h4, h5 {
+  font-size: 3.5rem;
+  margin-top: 3.5vh;
+  margin-bottom: 3.5vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   &:before, &:after {
     content: "";
     display: inline-block;
     height: 1px;
     position: relative;
     vertical-align: middle;
+    min-width: 10%;
     width: 100%;
+    background-color: cs.cs("alt-fg");
+    color: cs.cs("alt-fg");
+    flex-shrink: 100000000000;
   }
   &:before {
-    margin-right: 5%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
   }
   &:after {
-    margin-left: 5%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
   }
-}
-
-@include cs.themed(cs.$themes, $invert: true) {
-h1 {
-  &:before, &:after {
-    background-color: cs.cs("alt-fg");
-  }
-}
 }
 
 header h1 {
-  font-size: 4rem;
+  font-size: 4.0rem;
+  margin-top: 4.0vh;
+  margin-bottom: 4.0vh;
+}
+
+h2 {
+  font-size: 3.0rem;
+  margin-top: 3.0vh;
+  margin-bottom: 3.0vh;
+    &:before {
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+    &:after {
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+}
+
+h3 {
+  font-size: 2.5rem;
+  margin-top: 2.5vh;
+  margin-bottom: 2.5vh;
+    &:before {
+      margin-left: 7.5%;
+      margin-right: 7.5%;
+    }
+    &:after {
+      margin-left: 7.5%;
+      margin-right: 7.5%;
+    }
+}
+
+h4 {
+  font-size: 2.0rem;
+  margin-top: 2.0vh;
+  margin-bottom: 2.0vh;
+    &:before {
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+    &:after {
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+}
+
+h5 {
+  font-size: 1.5rem;
+  margin-top: 1.5vh;
+  margin-bottom: 1.5vh;
+    &:before {
+      margin-left: 12.5%;
+      margin-right: 12.5%;
+    }
+    &:after {
+      margin-left: 12.5%;
+      margin-right: 12.5%;
+    }
 }

@@ -1,0 +1,7 @@
+{% for subsection in section.subsections %}
+    {% set subsec = get_section(path=subsection) %}
+    <h1><a href={{subsec.path}}>{{subsec.title}}</a></h1>
+    {% for page in subsec.pages %}
+        <h2><a href={{page.path}}>{{page.title}}</a></h2>
+    {% endfor %}
+{% endfor %}

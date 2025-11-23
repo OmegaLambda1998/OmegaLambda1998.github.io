@@ -1,3 +1,9 @@
-{% if page.content %}{{ page.content | safe }}
-{% elif section.content %}{{ section.content | safe }}
+{% if page.content %}
+    {{ page.content | safe }}
+{% elif section.content %}
+    {{ section.content | safe }}
+{% elif page.description %}
+    {{ page.description | safe }}
+{% elif section.description %}
+    {{ section.description | safe }}
 {% endif %}
