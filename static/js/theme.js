@@ -49,6 +49,7 @@ function getCurrentTheme() {
 function setTheme(theme) {
     var classes = getClassList();
     const old_theme = getCurrentTheme();
+    console.log(old_theme, theme);
     if (old_theme != theme) {
         if (old_theme) {
             classes.toggle(old_theme);
