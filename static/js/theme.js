@@ -93,6 +93,7 @@ function initialiseTheme() {
         mqLight.addEventListener('change', listener);
     }
 
+    console.log(getStoredTheme(), getDefaultTheme(), THEMES[0]);
     const theme = getStoredTheme() || getDefaultTheme() || THEMES[0];
     setTheme(theme);
 }
